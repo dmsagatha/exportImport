@@ -302,7 +302,7 @@
   <div class="row wow fadeIn">
 
     <!--Grid column-->
-    <div class="col-md-6 mb-4">
+    <div class="col-md-12 col-md-6 mb-4">
 
       <!--Card-->
       <div class="card">
