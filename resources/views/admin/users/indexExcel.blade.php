@@ -34,7 +34,7 @@
             Con encabezados - (CE)
           </p>
           <div class="text-sm-left mb-3" align="right">
-            <a href="{{ route('admin.usersExcel.export') }}" class="btn btn-amber" data-toggle="tooltip" title="Exportar toda la info sin encabezados">
+            <a href="{{ route('admin.usersExcel.export') }}" class="btn btn-info" data-toggle="tooltip" title="Exportar toda la info sin encabezados">
               Exportar Usuarios - (SI)
             </a>
             <a href="{{ route('admin.usersExcel.export_view') }}" class="btn btn-amber" data-toggle="tooltip" title="Exportar la vista de la tabla con encabezados">
