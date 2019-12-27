@@ -50,7 +50,7 @@
             <form action="{{ route('admin.usersExcel.import') }}" method="POST" enctype="multipart/form-data">
               @csrf
 
-              <input type="file" name="usersImport" />
+              <input type="file" name="usersImportSE" />
               <button class="btn btn-primary">Importar Usuarios - (SE)</button>
             </form>
           </div>
