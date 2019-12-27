@@ -30,7 +30,7 @@
       <div class="card">
         <div class="card-body">
           <p class="text-muted">
-            Sin encabezados - (SI) <br>
+            Sin encabezados - (SE) <br>
             Con encabezados - (CE)
           </p>
           <div class="text-sm-left mb-3" align="right">
@@ -44,7 +44,17 @@
               Exportar Usuarios con Estilos
             </a>
           </div>
+          <hr>
 
+          <div class="text-sm-left mb-3" align="right">
+            <form action="{{ route('admin.usersExcel.import') }}" method="POST" enctype="multipart/form-data">
+              @csrf
+
+              <input type="file" name="usersImport" />
+              <button class="btn btn-primary">Importar Usuarios - (SE)</button>
+            </form>
+          </div>
+          
           @if (! $users->isEmpty())
             <div class="table-responsive text-nowrap">
               @include('admin.users._table', $users)
