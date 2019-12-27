@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
-use Maatwebsite\Excel\Facades\Excel;
-//use Excel;
+//use Maatwebsite\Excel\Facades\Excel;
+use Excel;
 use App\Exports\UsersExport;
 use App\Exports\UsersExportView;
 use App\Exports\UsersExportStyling;
@@ -36,9 +36,14 @@ class UsersExcelController extends Controller
     return Excel::download(new UsersExportStyling(), 'usersExportStyling.xlsx');
   }
 
-  public function import()
+  public function import(Request $request)
   {
-    Excel::import(new UsersImport(), request()->file('usersImport'));
+    // Validar el archivo
+    request()->validate([
+      'usersImportSE' => 'required'
+    ]);
+    
+    Excel::import(new UsersImport(), request()->file('usersImportSE'));
 
     return redirect()->route('admin.users.excel.index')->with('success', 'Importado satisfactoriamente!.');
   }
