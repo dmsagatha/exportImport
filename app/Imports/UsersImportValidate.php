@@ -17,17 +17,12 @@ class UsersImportValidate implements ToModel, WithHeadingRow, WithValidation
   */
   public function model(array $row)
   {
-    $user = new User;
-
-    $user->username = $row['username'];
-    $user->name     = $row['name'];
-    $user->email    = $row['email'];
-    $user->password = Hash::make($row['password']);
-    $user->save();
-
-    /* return new User([
-        //
-    ]); */
+    return new User([
+      'username' => $row['username'],
+      'name'     => $row['name'],
+      'email'    => $row['email'],
+      'password' => Hash::make($row['password']),
+    ]);
   }
 
   public function rules(): array
