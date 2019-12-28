@@ -37,7 +37,7 @@ class UsersExcelController extends Controller
     return Excel::download(new UsersExportStyling(), 'usersExportStyling.xlsx');
   }
 
-  public function import(Request $request)
+  public function import()
   {
     // Validar el archivo
     request()->validate([
