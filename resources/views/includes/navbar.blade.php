@@ -22,6 +22,11 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
+        <li class="nav-item {{ (request()->is('admin/usuariosExcel')) ? 'active' : '' }}">
+          <a class="nav-link waves-effect" href="{{ route('admin.users.excel.index') }}">
+            Exportar | Importar Usuarios
+          </a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Menú Desplegable
