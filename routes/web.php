@@ -18,9 +18,10 @@ Route::group(
     // Exportar Usuarios
     Route::get('users/exportar', 'UsersExcelController@export')->name('usersExcel.export');
     Route::get('users/exportarVista', 'UsersExcelController@export_view')->name('usersExcel.export_view');
-    Route::get('users/exportarStilos', 'UsersExcelController@export_styling')->name('usersExcel.export_styling');
+    Route::get('users/exportarEstilos', 'UsersExcelController@export_styling')->name('usersExcel.export_styling');
     
-    // Exportar Usuarios
+    // Importar Usuarios
     Route::post('users/importar', 'UsersExcelController@import')->name('usersExcel.import');
+    Route::post('users/importarValidar', 'UsersExcelController@import_validate')->name('usersExcel.import_validate');
   }
 );

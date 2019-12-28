@@ -51,7 +51,15 @@
               @csrf
 
               <input type="file" name="usersImportSE" />
-              <button class="btn btn-primary">Importar Usuarios - (SE)</button>
+              <button class="btn btn-blue-grey">Importar Usuarios - (SE)</button>
+            </form>
+          </div>
+          <div class="text-sm-left mb-3" align="right">
+            <form action="{{ route('admin.usersExcel.import_validate') }}" method="POST" enctype="multipart/form-data">
+              @csrf
+
+              <input type="file" name="usersImportCE" />
+              <button class="btn btn-primary">Importar Usuarios con Validaciones - (CE)</button>
             </form>
           </div>
           

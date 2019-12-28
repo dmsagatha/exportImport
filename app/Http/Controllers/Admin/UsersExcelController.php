@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
-//use Maatwebsite\Excel\Facades\Excel;
 use Excel;
 use App\Exports\UsersExport;
 use App\Exports\UsersExportView;
 use App\Exports\UsersExportStyling;
 use App\Imports\UsersImport;
+use App\Imports\UsersImportValidate;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -45,6 +46,31 @@ class UsersExcelController extends Controller
     
     Excel::import(new UsersImport(), request()->file('usersImportSE'));
 
-    return redirect()->route('admin.users.excel.index')->with('success', 'Importado satisfactoriamente!.');
+    return redirect()->route('admin.users.excel.index')
+                     ->with('success', 'Importado satisfactoriamente!.');
+  }
+
+  public function import_validate(Request $request)
+  {
+    // Validar el archivo
+    request()->validate([
+      'usersImportCE' => 'required'
+    ]);
+
+    $validator = Validator::make([
+        'extension' => strtolower($request->usersImportCE->getClientOriginalExtension()),
+      ],
+      [
+        'extension' => 'required|in:csv,xlsx,xls,odt,ods,odp',
+      ]
+    );
+
+    if($validator->fails()) {
+      return back()->with('failed', $validator->errors()->first());
+    } else {
+      Excel::import(new UsersImportValidate, $request->file('usersImportCE'));
+
+      return back()->with('success', 'Importado satisfactoriamente!.');
+    }
   }
 }
