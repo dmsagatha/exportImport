@@ -38,16 +38,6 @@ class User extends Authenticatable
 		'email_verified_at' => 'datetime',
 	];
 
-	public function peripherals()
-	{
-		return $this->hasMany(Peripheral::class, 'usersabs_id');
-	}
-
-	public function hasPeripherals()
-	{
-		return $this->hasMany(Peripheral::class, 'usersabs_id')->count();
-	}
-
 	public $messages;
 
   public static $rules = [

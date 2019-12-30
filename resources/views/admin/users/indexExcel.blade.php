@@ -13,18 +13,6 @@
     </div>
   </div>
 
-  <!--Mostrar mensajes de éxito y error a la vista -->
-  @if(count($errors) > 0)
-    <div class="alert alert-danger">
-      Validación de errores al subir archivos:<br>
-      <ul>
-        @foreach($errors->all() as $error)
-          <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-  @endif
-
   <div class="row wow fadeIn">
     <div class="col-md-12 mb-4">
       <div class="card">
@@ -51,15 +39,20 @@
               @csrf
 
               <input type="file" name="usersImportSE" />
-              <button class="btn btn-blue-grey">Importar Usuarios - (SE)</button>
+              <button class="btn btn-blue-grey" data-toggle="tooltip" title="Ejemplo: public/dataImport/Excel-usersImport-SE.xlsx">
+                Importar Usuarios - (SE)
+              </button>
             </form>
           </div>
+          
           <div class="text-sm-left mb-3" align="right">
             <form action="{{ route('admin.usersExcel.import_validate') }}" method="POST" enctype="multipart/form-data">
               @csrf
 
               <input type="file" name="usersImportCE" />
-              <button class="btn btn-primary">Importar Usuarios con Validaciones - (CE)</button>
+              <button class="btn btn-primary" data-toggle="tooltip" title="Ejemplo: public/dataImport/Excel-usersImport-CE-Update.csv">
+                Importar Usuarios con Validaciones - (CE)
+              </button>
             </form>
           </div>
           
