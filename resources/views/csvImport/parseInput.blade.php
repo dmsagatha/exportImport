@@ -4,9 +4,7 @@
   <div class='row'>
     <div class='col-md-12'>
       <div class="card panel-default">
-        <div class="card-header">
-          @lang('global.app_csvImport')
-        </div>
+        <div class="card-header">Importar CSV</div>
 
         <div class="card-body table-responsive">
           <form class="form-horizontal" method="POST" action="{{ route($routeName) }}">
@@ -19,38 +17,36 @@
 
             <table class="table">
               @if(isset($headers))
-              <tr>
-                @foreach($headers as $field)
-                <th>{{ $field }}</th>
-                @endforeach
-              </tr>
+                <tr>
+                  @foreach($headers as $field)
+                    <th>{{ $field }}</th>
+                  @endforeach
+                </tr>
               @endif
               @if($lines)
-              @foreach($lines as $line)
-              <tr>
-                @foreach($line as $field)
-                <td>{{ $field }}</td>
+                @foreach($lines as $line)
+                  <tr>
+                    @foreach($line as $field)
+                      <td>{{ $field }}</td>
+                    @endforeach
+                  </tr>
                 @endforeach
-              </tr>
-              @endforeach
               @endif
               <tr>
                 @foreach($headers as $key => $header)
-                <td>
-                  <select name="fields[{{ $key }}]">
-                    <option value=''>Please select</option>
-                    @foreach($fillables as $k => $fillable)
-                    <option value="{{ $fillable }}" {{ strtolower($header) === strtolower($fillable) ? 'selected' : '' }}>{{ $fillable }}</option>
-                    @endforeach
-                  </select>
-                </td>
+                  <td>
+                    <select name="fields[{{ $key }}]">
+                      <option value=''>Please select</option>
+                      @foreach($fillables as $k => $fillable)
+                        <option value="{{ $fillable }}" {{ strtolower($header) === strtolower($fillable) ? 'selected' : '' }}>{{ $fillable }}</option>
+                      @endforeach
+                    </select>
+                  </td>
                 @endforeach
               </tr>
             </table>
 
-            <button type="submit" class="btn btn-primary">
-              Importar datos
-            </button>
+            <button type="submit" class="btn btn-primary">Importar datos</button>
           </form>
         </div>
       </div>

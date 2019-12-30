@@ -12,9 +12,9 @@
               @csrf
               
               <div class="form-group{{ $errors->has('csv_file') ? ' has-error' : '' }}">
-                <label for="csv_file" class="col-md-4 control-label">Archivo CSV a importar</label>
+                <label for="csv_file" class="control-label">Archivo CSV a importar</label>
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <input id="csv_file" type="file" class="form-control-file" name="csv_file" required>
 
                   @if($errors->has('csv_file'))
@@ -26,7 +26,7 @@
               </div>
 
               <div class="form-group">
-                <div class="col-md-6 col-md-offset-4">
+                <div class="col-md-12 col-md-6 col-md-offset-4">
                   <div class="checkbox">
                     <label>
                       <input type="checkbox" name="header" checked>
@@ -38,9 +38,7 @@
 
               <div class="form-group">
                 <div class="col-md-8 col-md-offset-4">
-                  <button type="submit" class="btn btn-primary">
-                    Procesar CSV
-                  </button>
+                  <button type="submit" class="btn btn-primary">Procesar CSV</button>
                 </div>
               </div>
             </form>

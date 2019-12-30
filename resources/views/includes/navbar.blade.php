@@ -22,18 +22,17 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item {{ (request()->is('admin/usuariosExcel')) ? 'active' : '' }}">
-          <a class="nav-link waves-effect" href="{{ route('admin.users.excel.index') }}">
-            Exportar | Importar Usuarios
-          </a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Menú Desplegable
+            Exportar | Importar Usuarios
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item waves-effect" href="#">Nivel 1</a>
-            <a class="dropdown-item waves-effect" href="#">Nivel 1</a>
+            <a class="dropdown-item waves-effect" href="{{ route('admin.users.excel.index') }}">
+              Con Laravel Excel
+            </a>
+            <a class="dropdown-item waves-effect" href="{{ route('admin.users.index') }}">
+              Con Trait
+            </a>
           </div>
         </li>
       </ul>

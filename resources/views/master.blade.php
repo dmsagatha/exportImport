@@ -54,6 +54,7 @@
     <main class="pt-5 mx-lg-5">
       <div class="container-fluid mt-5">
         @include('flash::message')
+        @include('partials._alerts')
         
         @yield('content')
       </div>
@@ -81,6 +82,7 @@
       new WOW().init();
     </script>
 
+    {{-- Botones DataTables --}}
     <script>
       $(function () {
         let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons);
@@ -103,6 +105,7 @@
       });
     </script>
 
+    {{-- DataTables --}}
     <script>
       $(document).ready(function () {
         $('#dtBasic').DataTable({
@@ -117,11 +120,13 @@
       });
     </script>
 
+    {{-- Inicializaciones --}}
     <script>
       $(document).ready(function () {
         $(".select2").select2({
           maximumSelectionLength: 2
         });
+        $('[data-toggle="tooltip"]').tooltip();
       });
     </script>
 

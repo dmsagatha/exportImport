@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Traits;
 
+//use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
@@ -23,7 +24,7 @@ trait CsvImportTrait
       $fields = array_flip(array_filter($fields));
 
       $modelName = $request->input('modelName', false);
-      $model     = "App\\" . $modelName;
+      $model     = "App\Models\\" . $modelName;
 
       $reader = new SpreadsheetReader($path);
       $insert = [];
@@ -42,6 +43,8 @@ trait CsvImportTrait
         $insert[] = $tmp;
       }
 
+      $routeName = 'admin.' . strtolower(Str::plural(Str::kebab($modelName))) . '.index';
+
       // Validaciones - Opción 1
       /* $messages = ['email.unique' => 'El correo electrónico :input ya esta en uso'];
       foreach ($insert as $insertItem) {
@@ -54,6 +57,10 @@ trait CsvImportTrait
 
       // Validaciones - Opción 2
       /* $rules = [
+        '*.username' => [
+            'required',
+            'unique:users',
+        ],
         '*.name'     => [
             'required',
         ],
@@ -69,21 +76,18 @@ trait CsvImportTrait
       $validator = Validator::make($insert, $rules, $messages);
       
       if ($validator->fails()) {
-        //dd($validator->errors());
-        return redirect()->route('admin.users.index')->withErrors($validator);
+        return redirect()->route($routeName)->withErrors($validator);
       } */
       
       // Validaciones - Opción 3
       $modelRules = "App\Http\Requests\\" . "Store".$modelName."Request";
-      //dd($modelRules);
       $messages = ['*.unique' => 'El campo :input ya esta en uso'];
-      $redirect = url()->previous();
+      
       foreach ($insert as $insertItem) {
         $validator = Validator::make($insertItem, (new $modelRules())->rules(), $messages);
 
         if ($validator->fails()) {
-          //dd($validator->errors());
-          return redirect()->route('admin.users.index')->withErrors($validator);
+          return redirect()->route($routeName)->withErrors($validator);
         }
       }
 
@@ -126,7 +130,7 @@ trait CsvImportTrait
     $file->storeAs('csv_import', $filename);
 
     $modelName     = $request->input('model', false);
-    $fullModelName = "App\\" . $modelName;
+    $fullModelName = "App\Models\\" . $modelName;
 
     $model     = new $fullModelName();
     $fillables = $model->getFillable();

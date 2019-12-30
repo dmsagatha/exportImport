@@ -5,8 +5,6 @@
       <th>NOMBRE DE USUARIO</th>
       <th>NOMBRE</th>
       <th>CORREO ELECTRONICO</th>
-      <th>FECHA <br> CREACION</th>
-      <th>FECHA <br> ACTUALIZACION</th>
     </tr>
   </thead>
   <tbody>
@@ -16,8 +14,6 @@
         <td>{{ $user->username }}</td>
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
-        <td>{{ $user->created_at }}</td>
-        <td>{{ $user->updated_at }}</td>
       </tr>
     @endforeach
   </tbody>
