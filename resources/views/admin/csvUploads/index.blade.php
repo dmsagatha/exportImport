@@ -22,12 +22,12 @@
               <tr>
                 <td class="p-2 text-sm">{{ $csvUpload->original_filename }}</td>
                 <td class="p-2 text-sm">{{ count($csvUpload->file_contents) }}</td>
-                <td class="p-2 text-sm">{{ $csvUpload->importedRows->count() }}</td>
+                {{-- <td class="p-2 text-sm">{{ $csvUpload->importedRows->count() }}</td>
                 <td class="p-2 text-sm">{{ $csvUpload->warnedRows->count() }}</td>
-                <td class="p-2 text-sm">{{ $csvUpload->failedRows->count() }}</td>
+                <td class="p-2 text-sm">{{ $csvUpload->failedRows->count() }}</td> --}}
 
                 <td class="p-2 text-sm">
-                  <a href="#" class="text-blue">Details</a>
+                  <a href="#" class="text-blue">Detalles</a>
                 </td>
               </tr>
             @endforeach
@@ -41,8 +41,12 @@
         @endif
       </table>
 
-      <a class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 no-underline rounded" 
-        href="#">Subir CSV</a>
+      <div class="text-center">
+        <a class="btn btn-indigo" href="{{ route('admin.csvUploads.create') }}">
+          Subir CSV
+        </a>
+      </div>
+      <br>
     </div>
   </div>
 @endsection

@@ -35,5 +35,11 @@ Route::group(
     // https://zaengle.com/blog/building-a-csv-importer-part-1
     // https://github.com/zaengle/demo-csv-importer
     Route::get('csvUploads', 'CsvUploadController@index')->name('csvUploads.index');
+    Route::get('csvUploads/create', 'CsvUploadController@create')->name('csvUploads.create');
+    Route::post('csvUploads', 'CsvUploadController@store')->name('csvUploads.store');
+    Route::get('csvUploads/{csvUpload}', 'CsvUploadController@show')->name('csvUploads.show');
+
+    Route::get('csvUploads/{csvUpload}/map-columns', 'MapColumnsController@show')->name('csvUploads.map-columns.show');
+    Route::post('csvUploads/{csvUpload}/map-columns', 'MapColumnsController@store')->name('csvUploads.map-columns.store');
   }
 );
