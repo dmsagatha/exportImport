@@ -33,6 +33,9 @@
             <a class="dropdown-item waves-effect" href="{{ route('admin.users.index') }}">
               Con Trait
             </a>
+            <a class="dropdown-item waves-effect" href="{{ route('admin.csvUploads.index') }}">
+              Con Validaciones - Zaengle
+            </a>
           </div>
         </li>
       </ul>

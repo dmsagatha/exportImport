@@ -30,5 +30,10 @@ Route::group(
     Route::resource('users', 'UsersController');
     Route::post('usersImport/parseCsv', 'UsersController@parseCsvImport')->name('users.parseCsvImport');
     Route::post('usersImport/processCsv', 'UsersController@processCsvImport')->name('users.processCsvImport');
+
+    // Importar Usuarios con Trait - Zaengle
+    // https://zaengle.com/blog/building-a-csv-importer-part-1
+    // https://github.com/zaengle/demo-csv-importer
+    Route::get('csvUploads', 'CsvUploadController@index')->name('csvUploads.index');
   }
 );
