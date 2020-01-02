@@ -28,7 +28,7 @@
             <a href="{{ route('admin.usersExcel.export_view') }}" class="btn btn-amber" data-toggle="tooltip" title="Exportar la vista de la tabla con encabezados">
               Exportar Usuarios - (CE)
             </a>
-            <a href="{{ route('admin.usersExcel.export_styling') }}" class="btn btn-deep-orange"data-toggle="tooltip" title="Exportar Colección con encabezados, estilos y ajuste de columnas">
+            <a href="{{ route('admin.usersExcel.export_styling') }}" class="btn btn-deep-orange" data-toggle="tooltip" title="Exportar Colección con encabezados, estilos y ajuste de columnas">
               Exportar Usuarios con Estilos
             </a>
           </div>
