@@ -3,7 +3,10 @@
 namespace App\Services\CsvImporter;
 
 use App\Models\CsvRow;
-    
+
+/**
+ *  E objeto CsvImportTraveler es como una forma de mover datos entre las tuberías (Pipes)
+ */
 class CsvImportTraveler
 {
   private $row;
