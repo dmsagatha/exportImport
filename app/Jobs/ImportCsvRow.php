@@ -29,6 +29,8 @@ class ImportCsvRow implements ShouldQueue
    */
   public function handle(CsvImporter $csvImporter)
   {
+    // Después de crear la nueva fila CsvRow a una clase CsvImporter que iniciará 
+    // la integración de los datos de la fila CSV en la aplicación
     $csvImporter->importRow($this->csvRow);
   }
 }

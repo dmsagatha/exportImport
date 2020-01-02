@@ -38,7 +38,7 @@ class DistributeCsvUploadContentIntoCsvRows implements ShouldQueue
   public function handle()
   {
     // Se toma cada fila de la columna file_contents, se aplica la asignación de columnas
-    // recién proporcionadas, se crea un registro CsvRow y se pasa al trabajo ImportCsvRow
+    // recién seleccionadas, se crea un registro CsvRow y se pasa al trabajo ImportCsvRow
     collect($this->csvUpload->file_contents)
                 ->each(function ($csvRow) {
                     dispatch(new ImportCsvRow(CsvRow::create([
