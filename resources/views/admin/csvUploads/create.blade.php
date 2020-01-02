@@ -1,29 +1,39 @@
 @extends('master')
 
+@section('title', 'Importar CSV')
+
 @section('content')
-  <div class="w-full max-w-sm mx-auto overflow-hidden">
-    @if(session()->has('error'))
-      <div class="text-center bg-red rounded text-white max-w-sm mx-auto p-4 mb-8">
-        {{ session()->get('error') }}
-      </div>
-    @endif
+  <div class="card mb-4 wow fadeIn">
+    <div class="card-body d-sm-flex justify-content-between">
+      <h4 class="mb-2 mb-sm-0 pt-1">
+        <a href="{{ route('panel') }}">Dashboard</a>
+        <span>/</span>
+        <span>Importar Datos CSV</span>
+      </h4>
+    </div>
+  </div>
+  
+  <div class="col-md-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="mb-5">Subir CSV</h3>
 
-    <form action="{{ route('admin.csvUploads.store') }}" method="POST"
-      class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" enctype="multipart/form-data">
-      @csrf
-      {{ method_field('POST') }}
-
-      <h3 class="pb-4 mt-0 font-bold">Subir CSV</h3>
-      <div class="mb-4">
-        <input type="file" name="csvFile" id="csvFile">
+        <form action="{{ route('admin.csvUploads.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
+          {{ method_field('POST') }}
+          
+          <div class="mb-4">
+            <input type="file" name="csvFile" id="csvFile">
+          </div>
+          <div class="mb-4">
+            <input id="hasHeaders" name="hasHeaders" type="checkbox">
+            <label for="hasHeaders">El archivo contiene fila de encabezados?</label>
+          </div>
+          <div class="mt-4">
+            <button class="btn btn-amber" type="submit">Subir datos</button>
+          </div>
+        </form>
       </div>
-      <div class="mb-4">
-        <input id="hasHeaders" name="hasHeaders" type="checkbox">
-        <label for="hasHeaders">Archivo contiene fila de encabezado?</label>
-      </div>
-      <div class="mt-4">
-        <button class="btn btn-amber" type="submit">Subir datos</button>
-      </div>
-    </form>
+    </div>
   </div>
 @endsection

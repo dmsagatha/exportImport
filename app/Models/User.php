@@ -17,7 +17,7 @@ class User extends Authenticatable
 	 * @var array
 	 */
 	protected $fillable = [
-		'name', 'username', 'email', 'password',
+		'name', 'username', 'email', 'password'
 	];
 
 	/**
@@ -45,25 +45,4 @@ class User extends Authenticatable
       'name'     => 'required',
       'email'    => 'required|email|unique:users,email,:id',
   ];
-	
-/* 	public static function boot()
-	{
-		parent::boot();
-		
-		// Validar integridad de los datos al Eliminar
-		self::deleting(function ($model) {
-      // Comprobar si el Usuario tiene asociados Periféricos
-			if ($model->peripherals->count()) {
-				//$html = 'El usuario no puede ser eliminado porque tiene Periféricos asociados:';
-				$html = "El Usuario $model->name no puede ser eliminado porque tiene Periféricos asociados, con No. de Inventario:";
-				$html .= '<ul>';
-				foreach ($model->peripherals as $peripheral) {
-					$html .= "<li>Inventario: $peripheral->inventory</li>";
-				}
-				$html .= "</ul>";
-				Flash::overlay($html, "Error de integridad de los datos");
-				return false;
-			}
-		});
-	} */
 }

@@ -22,6 +22,11 @@ class CsvUploadController extends Controller
   
   public function store(Request $request)
   {
+    // Validar el archivo
+    request()->validate([
+      'csvFile' => 'required'
+    ]);
+
     // Extraer las filas del archivo cargado
     $data = collect(array_map('str_getcsv', file($request->file('csvFile')->getRealPath())));
 

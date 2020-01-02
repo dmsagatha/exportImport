@@ -2,8 +2,9 @@
 
 namespace App\Jobs;
 
-use App\Models\CsvUpload;
 use App\Models\CsvRow;
+use App\Models\CsvUpload;
+use App\Jobs\ImportCsvRow;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -36,8 +37,8 @@ class DistributeCsvUploadContentIntoCsvRows implements ShouldQueue
    */
   public function handle()
   {
-    // Se toma cada fila de la  columna file_contents, se aplica la asignación de columnas
-    // recién proporcionada, se crea un registro CsvRow y lo pasa al trabajo ImportCsvRow
+    // Se toma cada fila de la columna file_contents, se aplica la asignación de columnas
+    // recién proporcionadas, se crea un registro CsvRow y se pasa al trabajo ImportCsvRow
     collect($this->csvUpload->file_contents)
                 ->each(function ($csvRow) {
                     dispatch(new ImportCsvRow(CsvRow::create([

@@ -1,22 +1,21 @@
-username,name,email,password
-celia.raynor,Lydia White,nkiehn@example.net,123456
-reynold.kirlin,Rosamond Hayes II,claudia.leannon@example.com,123456
-casper85,Don Macejkovic,hspencer@example.com,123456
-goodwin.elta,Cornelius Keebler,soledad55@example.net,123456
-homenick.jonathan,Ceasar Bashirian,susie84@example.org,123456
-rosalyn.torp,Mr. Vince Witting,kattie.barton@example.net,123456
-niko06,Dr. Derick White I,uabshire@example.com,123456
-maryse19,Manuela Kreiger,shawn46@example.org,123456
-jabari.goodwin,Avis Ruecker II,elias.oconner@example.com,123456
-gerson.schroeder,Yasmeen Reilly,dpadberg@example.com,123456
-alang,Emmet Wilderman,erik.lakin@example.com,123456
-brando.howell,Merritt Jacobi,yprohaska@example.com,123456
-marina67,Dorthy Runolfsson Jr.,kristy.sawayn@example.org,123456
-kpfannerstill,Keira Wuckert Sr.,kristina.murphy@example.com,123456
-jesus.goyette,Skyla Ryan,wrath@example.org,123456
-volkman.hanna,Amiya Ondricka,stacey.langosh@example.net,123456
-bauch.kraig,Lisette Romaguera Jr.,justina93@example.com,123456
-odell.batz,Golden Ziemann,tlubowitz@example.org,123456
-kirstin.jast,Hanna Hoeger,cletus61@example.com,123456
-emelia.boehm,Prof. Britney Heaney II,wisozk.ferne@example.net,123456
-dmorales,Doris Morales,dms@tmp.com,123456
+username,name,email,password,created_at,updated_at
+8671457,Helene Windler,stanley18@example.org,123456,2020-01-02 15:15:27,2020-01-02 15:15:27
+6674251,Asia Kassulke,mgreenfelder@example.org,123456,2020-01-02 15:15:27,2020-01-02 15:15:27
+3457590,Gabriella Little,cristopher.lehner@example.org,123456,2020-01-02 15:15:28,2020-01-02 15:15:28
+5044534,Jody Dietrich,jaren72@example.net,123456,2020-01-02 15:15:32,2020-01-02 15:15:32
+3147285,Prof. Eusebio Herzog I,yazmin43@example.org,123456,2020-01-02 15:15:33,2020-01-02 15:15:33
+6444754,Aimee Koepp,juvenal.skiles@example.org,123456,2020-01-02 15:15:33,2020-01-02 15:15:33
+3784353,Mr. Wade Medhurst,bgreenholt@example.org,123456,2020-01-02 15:15:33,2020-01-02 15:15:33
+8078487,Prof. Julian Nikolaus DVM,kessler.stewart@example.org,123456,2020-01-02 15:15:33,2020-01-02 15:15:33
+3930252,Alysha Zemlak,wmarks@example.net,123456,2020-01-02 15:15:33,2020-01-02 15:15:33
+5091373,Maye Quitzon,linnea97@example.net,123456,2020-01-02 15:15:34,2020-01-02 15:15:34
+5495275,Buford Boyer,cboyle@example.net,123456,2020-01-02 15:15:34,2020-01-02 15:15:34
+6430992,Rahsaan Daniel,schmidt.tatum@example.net,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
+7302995,Dr. Joana Herman,jack16@example.org,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
+4565279,Favian Tromp,schinner.jessy@example.org,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
+4962562,Filomena Schumm,hermiston.aniya@example.com,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
+5934509,Chandler Eichmann,lisette.murray@example.com,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
+4883530,Dr. Woodrow Cremin,zboncak.melyssa@example.org,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
+3819360,Mrs. Aylin Sipes,karley.dubuque@example.net,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
+8975035,Jammie Langosh,mhintz@example.net,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
+8821785,Dr. Audie Rolfson,emiliano.ohara@example.net,123456,2020-01-02 15:15:35,2020-01-02 15:15:35

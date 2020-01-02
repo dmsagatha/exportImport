@@ -37,11 +37,8 @@ class CsvUpload extends Model
       'name',
       'email',
       'password',
-      'first_name',
-      'last_name',
-      'allergies',
-      'emergency_contact_name',
-      'emergency_contact_phone',
+      'created_at',
+      'updated_at',
     ];
   }
 

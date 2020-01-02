@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\CsvRow;
+use App\Services\CsvImporter\CsvImporter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -26,7 +27,8 @@ class ImportCsvRow implements ShouldQueue
    * @param CSVImporter $csvImporter
    * @return void
    */
-  public function handle()
+  public function handle(CsvImporter $csvImporter)
   {
+    $csvImporter->importRow($this->csvRow);
   }
 }
