@@ -37,6 +37,13 @@ class CsvUpload extends Model
       'name',
       'email',
       'password',
+
+      'category_name',
+      'category_url',
+      'title',
+      'url',
+      'description',
+
       'created_at',
       'updated_at',
     ];

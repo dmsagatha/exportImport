@@ -22,8 +22,8 @@
     <link href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css" rel="stylesheet" />
 
 
-    {{-- <link rel="stylesheet" href="{{ asset('css/addons/datatables.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/addons/datatables-select.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/addons/datatables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/addons/datatables-select.min.css') }}">
     <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 

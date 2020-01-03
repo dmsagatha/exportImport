@@ -8,7 +8,7 @@
       <h4 class="mb-2 mb-sm-0 pt-1">
         <a href="{{ route('panel') }}">Dashboard</a>
         <span>/</span>
-        <span>Importar Datos</span>
+        <span>Importar Productos y Categorías</span>
       </h4>
     </div>
   </div>
@@ -25,6 +25,14 @@
             Aplicación GitHub
           </a>
         </h3>
+
+        <div class="text-center">
+          <a class="btn btn-deep-orange" href="{{ route('admin.csvUploads.create') }}"
+            data-toogle="tooltip" 
+            title="Ejemplo: public/dataImport/Csv-Products-CategoriesImport.csv">
+            Importar Datos CSV
+          </a>
+        </div>
 
         @if($csvUploads->count())
           <div class="table-responsive text-nowrap">
