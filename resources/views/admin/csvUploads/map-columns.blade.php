@@ -23,7 +23,7 @@
           @csrf
 
           <div class="table-responsive">
-            <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <table id="dtBasic" class="table table-striped table-bordered" cellspacing="0" width="100%">
               @if ($csvUpload->has_headers)
                 <tr>
                   @foreach ($csvUpload->headerRow as $headerField)

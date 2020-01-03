@@ -35,8 +35,8 @@
         </div>
 
         @if($csvUploads->count())
-          <div class="table-responsive text-nowrap">
-            <table class="table table-bordered table-hover user_table" id="dtBasic">
+          <div class="table-responsive-sm text-nowrap">
+            <table id="dtBasic" class="table table-bordered table-hover" cellspacing="0" width="100%">
               <thead class="black white-text">
                 <tr class="align-middle text-center text-uppercase font-weight-bold">
                   <th class="p-2">Nombre del Archivo</th>

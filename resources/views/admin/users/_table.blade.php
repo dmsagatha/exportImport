@@ -1,4 +1,4 @@
-<table class="table table-bordered table-hover user_table" id="dtBasic">
+<table id="dtBasic" class="table table-bordered table-hover" cellspacing="0" width="100%">
   <thead class="black white-text">
     <tr class="text-center align-middle">
       <th>No.</th>

@@ -18,8 +18,8 @@
       <div class="card-body">
         <h3 class="mb-5">{{ $csvUpload->original_filename }}</h3>
 
-        <div class="table-responsive text-nowrap">
-          <table class="table table-bordered table-hover user_table" id="dtBasic">
+        <div class="table-responsive">
+          <table id="dtHorizontalVertical" class="table table-bordered table-hover" cellspacing="0" width="100%">
             <thead class="black white-text">
               <tr class="text-center text-uppercase font-weight-bold">
                 <th class="p-2">Estatus</th>
