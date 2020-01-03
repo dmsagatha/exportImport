@@ -10,11 +10,11 @@ class CreateProductsTable extends Migration
   {
     Schema::create('products', function (Blueprint $table) {
         $table->bigIncrements('id');
+        $table->unsignedBigInteger('category_id')->nullable();
         $table->string('title');
         $table->string('url')->unique();
         $table->text('description');
 
-        $table->unsignedBigInteger('category_id')->nullable()->after('id');
         $table->foreign('category_id')->references('id')->on('categories')
               ->onUpdate('cascade')     // Al cambiar el id de la Categoría cambiar en Productos
               ->onDelete('set null');   // al eliminar asignar el valor a NULL
