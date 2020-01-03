@@ -28,7 +28,7 @@
         )
         
         @if (! $users->isEmpty())
-          <div class="table-responsive text-nowrap">
+          <div class="table-responsive-sm text-nowrap">
             @include('admin.users._table', $users)
           </div>
         @else
