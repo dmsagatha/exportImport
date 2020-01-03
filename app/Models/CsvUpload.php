@@ -42,6 +42,11 @@ class CsvUpload extends Model
     ];
   }
 
+  public function rows()
+  {
+    return $this->hasMany(CsvRow::class, 'csv_upload_id');
+  }
+
   public function getHeaderRowAttribute()
   {
     return array_keys($this->file_contents[0]);
@@ -55,5 +60,20 @@ class CsvUpload extends Model
   public function getAdditionalRowCountAttribute()
   {
     return (count($this->file_contents) - 5) < 0 ? 0 : count($this->file_contents) - 5;
+  }
+  
+  public function importedRows()
+  {
+    return $this->hasMany(CsvRow::class, 'csv_upload_id')->imported();
+  }
+  
+  public function warnedRows()
+  {
+    return $this->hasMany(CsvRow::class, 'csv_upload_id')->warned();
+  }
+  
+  public function failedRows()
+  {
+    return $this->hasMany(CsvRow::class, 'csv_upload_id')->failed();
   }
 }

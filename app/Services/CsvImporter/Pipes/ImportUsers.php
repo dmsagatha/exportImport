@@ -18,9 +18,9 @@ class ImportUsers implements CsvImporterPipe
    */
   public function handle(CsvImportTraveler $traveler, \Closure $next)
   {
-    /* if ( ! isset($traveler->getRow()->contents['email'])) {
-        throw new MissingUserEmailException('No email was set for user.');
-    } */
+    if (! isset($traveler->getRow()->contents['email'])) {
+        throw new MissingUserEmailException('No se configuró ningún correo electrónico para el usuario.');
+    }
 
     $user = User::firstOrCreate([
         'email'    => $traveler->getRow()->contents['email']

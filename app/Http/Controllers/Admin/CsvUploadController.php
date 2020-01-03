@@ -10,9 +10,13 @@ class CsvUploadController extends Controller
 {
   public function index()
   {
-    return view('admin.csvUploads.index')->with([
+    /* return view('admin.csvUploads.index')->with([
       'csvUploads' => CsvUpload::latest()->get()
-    ]);
+    ]); */
+
+    $csvUploads = CsvUpload::with('rows', 'importedRows', 'warnedRows', 'failedRows')->latest()->get();
+
+    return view('admin.csvUploads.index', compact('csvUploads'));
   }
   
   public function create()
