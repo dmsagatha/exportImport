@@ -12,6 +12,7 @@ class CsvImportTraveler
   private $row;
 
   private $user;
+  private $product;
 
   public function setRow(CsvRow $row): CsvImportTraveler
   {
@@ -24,13 +25,15 @@ class CsvImportTraveler
   {
     return $this->row;
   }
-
-  /**
-   * @return mixed
-   */
+  
   public function getUser()
   {
-      return $this->user;
+    return $this->user;
+  }
+  
+  public function getProduct()
+  {
+    return $this->product;
   }
 
   /**
@@ -39,8 +42,15 @@ class CsvImportTraveler
    */
   public function setUser($user): CsvImportTraveler
   {
-      $this->user = $user;
+    $this->user = $user;
 
-      return $this;
+    return $this;
+  }
+
+  public function setProduct($product): CsvImportTraveler
+  {
+    $this->product = $product;
+
+    return $this;
   }
 }

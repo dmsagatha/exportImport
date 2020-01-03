@@ -13,6 +13,6 @@ $factory->define(Product::class, function (Faker $faker) {
       'category_id' => $faker->randomElement($categories),
       'title'       => $faker->text($maxNbChars = 30),
       'url'         => $faker->unique()->word(10),
-      'description' => $faker->sentence($nbWords = 10),
+      'description' => $faker->sentence($nbWords = 5),
     ];
 });

@@ -19,7 +19,7 @@
         <h3 class="mb-5">{{ $csvUpload->original_filename }}</h3>
 
         <div class="table-responsive text-nowrap">
-          <table class="table table-bordered table-hover user_table">
+          <table class="table table-bordered table-hover user_table" id="dtBasic">
             <thead class="black white-text">
               <tr class="text-center text-uppercase font-weight-bold">
                 <th class="p-2">Estatus</th>

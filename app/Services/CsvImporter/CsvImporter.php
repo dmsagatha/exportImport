@@ -7,6 +7,10 @@ use App\Models\CsvRowLog;
 use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Facades\DB;
 use App\Services\CsvImporter\Pipes\ImportUsers;
+use App\Services\CsvImporter\Pipes\ImportProducts;
+use App\Services\CsvImporter\Pipes\ImportCategories;
+use App\Services\CsvImporter\Exceptions\MissingUrlException;
+use App\Services\CsvImporter\Exceptions\MissingNameException;
 use App\Services\CsvImporter\Exceptions\MissingUserEmailException;
 
 /**
@@ -36,7 +40,9 @@ class CsvImporter
       return app(Pipeline::class)
           ->send($this->traveler->setRow($row))
           ->through([
-              ImportUsers::class
+              // ImportUsers::class,
+              ImportProducts::class,
+              ImportCategories::class
           ])->then(function ($progress) {
               $this->traveler->getRow()->markImported();
               DB::commit();
@@ -60,6 +66,14 @@ class CsvImporter
         case MissingUserEmailException::class;
             $pipe = MissingUserEmailException::class;
             $code = MissingUserEmailException::CODE;
+            break;
+        case MissingNameException::class;
+            $pipe = MissingNameException::class;
+            $code = MissingNameException::CODE;
+            break;
+        case MissingUrlException::class;
+            $pipe = MissingUrlException::class;
+            $code = MissingUrlException::CODE;
             break;
             
         default:

@@ -14,7 +14,8 @@ class CsvUploadController extends Controller
       'csvUploads' => CsvUpload::latest()->get()
     ]); */
 
-    $csvUploads = CsvUpload::with('rows', 'importedRows', 'warnedRows', 'failedRows')->latest()->get();
+    $csvUploads = CsvUpload::with('rows', 'importedRows', 'warnedRows', 'failedRows')
+                          ->latest()->get();
 
     return view('admin.csvUploads.index', compact('csvUploads'));
   }
