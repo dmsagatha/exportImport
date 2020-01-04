@@ -15,7 +15,7 @@
   <tbody>
     @foreach ($products as $data)
       <tr>
-        <td>{{ $loop->iteration }}</td>
+        <td class="text-center">{{ $loop->iteration }}</td>
         <td>{{ $data->title }}</td>
         <td>{{ $data->url }}</td>
         <td>{{ $data->category->name }}</td>

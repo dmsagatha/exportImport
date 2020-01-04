@@ -31,7 +31,7 @@
           </div>
           
           @if (! $products->isEmpty())
-            <div class="table-responsive-sm text-nowrap">
+            <div class="table-responsive-sm">
               @include('admin.importsExcel._table', $products)
             </div>
           @else

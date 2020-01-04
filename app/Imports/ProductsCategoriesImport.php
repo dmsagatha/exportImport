@@ -11,53 +11,64 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 
 class ProductsCategoriesImport implements ToModel, WithValidation
 {
+  /**
+  * @param array $row
+  *
+  * @return \Illuminate\Database\Eloquent\Model|null
+  */
   public function model(array $row)
   {
-    // Obtener el id de la Categoría
-    $category = Category::where('name', '=', $row[0])->first();
+    // Si los registros existen actualzarlos, de lo contrario crearlos
+    $product  = Product::where('url', '=', $row[0])->first();
+    $category = Category::where('name', '=', $row[3])->first();
 
-    /* if ($row[3] == null) {
-        $row[3] = '';
-    } */
+    if ($product) {
+      $product->title       = $row[1];
+      $product->description = $row[2];
+      $product->category_id = $category->id;
 
-    return new Product([
-      'category_id' => $category->id,
-      'url'         => $row[1],
-      'title'       => $row[2],
-      'description' => $row[3],
-    ]);
+      $product->save();
+
+      return $product;
+    }
+    else {
+      return new Product([
+        'url'         => $row[0],
+        'title'       => $row[1],
+        'description' => $row[2],
+        'category_id' => $category->id,
+      ]);
+    }
   }
-
-  // There was an error on row 1. 3 es inválido.
-
+  
   public function rules():array
   {
     return ([
-      '0' => 'required|exists:categories,name',
-      '1' => 'required|unique:products,url',
+      '0' => 'required',//|unique:products,url',
+      '1' => 'required',
       '2' => 'required',
-      '3' => 'required',
+      '3' => 'required|exists:categories,name',
     ]);
   }
 
   public function customValidationMessages()
   {
     return [
-      '0.exists'    =>  'El Nombre de la Categoría no existe',
-      '1.required'  =>  'La Url es requerido.',
-      '1.exists'    =>  'La Url ya existe',
-      '2.required'  =>  'El Título es requerido.',
-      '3.required'  =>  'La Descripción es requerida.',
+      '0.required'  =>  'La Url es requerido.',
+      //'0.exists'    =>  'La Url ya existe',
+      '1.required'  =>  'El Título es requerido.',
+      '2.required'  =>  'La Descripción es requerida.',
+      '3.exists'    =>  'El Nombre de la Categoría no existe',
     ];
   }
 
   public function customValidationAttributes()
   {
     return [
-      '0' => 'Category',
-      '1' => 'url',
-      '2' => 'title',
-      '3' => 'description',
+      '0' => 'url',
+      '1' => 'title',
+      '2' => 'description',
+      '3' => 'Category',
     ];
   }
 }
