@@ -21,8 +21,11 @@ Route::group(
     Route::get('users/exportStyling', 'UsersExcelController@export_styling')->name('usersExcel.export_styling');
     
     // Importar Usuarios con Laravel Excel
-    Route::post('users/import', 'UsersExcelController@import')->name('usersExcel.import');
     Route::post('users/importValidate', 'UsersExcelController@import_validate')->name('usersExcel.import_validate');
+    
+    // Importar Productos y Categorías con Laravel Excel
+    Route::get('importsExcel', 'ImportsExcelController@index')->name('imports.excel.index');
+    //Route::post('users/import', 'UsersExcelController@import')->name('usersExcel.import');
     
     // Importar Usuarios con Trait - Daily Laravel
     // https://www.youtube.com/watch?v=tpZK2A98ig0

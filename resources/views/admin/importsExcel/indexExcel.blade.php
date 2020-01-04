@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Usuarios')
+@section('title', 'Productos|Categorias')
 
 @section('content')
   <div class="card mb-4 wow fadeIn">
@@ -8,7 +8,7 @@
       <h4 class="mb-2 mb-sm-0 pt-1">
         <a href="{{ route('panel') }}">Dashboard</a>
         <span>/</span>
-        <span>Exportar-Importar Usuarios</span>
+        <span>Importar Productos y Categorias</span>
       </h4>
     </div>
   </div>
@@ -17,23 +17,6 @@
     <div class="col-md-12 mb-4">
       <div class="card">
         <div class="card-body">
-          <p class="text-muted">
-            Sin encabezados - (SE) <br>
-            Con encabezados - (CE)
-          </p>
-          <div class="text-sm-left mb-3" align="right">
-            <a href="{{ route('admin.usersExcel.export') }}" class="btn btn-info" data-toggle="tooltip" title="Exportar toda la info sin encabezados">
-              Exportar Usuarios - (SI)
-            </a>
-            <a href="{{ route('admin.usersExcel.export_view') }}" class="btn btn-amber" data-toggle="tooltip" title="Exportar la vista de la tabla con encabezados">
-              Exportar Usuarios - (CE)
-            </a>
-            <a href="{{ route('admin.usersExcel.export_styling') }}" class="btn btn-deep-orange" data-toggle="tooltip" title="Exportar Colección con encabezados, estilos y ajuste de columnas">
-              Exportar Usuarios con Estilos
-            </a>
-          </div>
-          <hr>
-          
           <div class="text-sm-left mb-3" align="right">
             <form action="{{ route('admin.usersExcel.import_validate') }}" method="POST" enctype="multipart/form-data">
               @csrf
@@ -45,9 +28,9 @@
             </form>
           </div>
           
-          @if (! $users->isEmpty())
+          @if (! $products->isEmpty())
             <div class="table-responsive-sm text-nowrap">
-              @include('admin.users._table', $users)
+              @include('admin.importsExcel._table', $products)
             </div>
           @else
             <h4>No hay registros creados</h4>

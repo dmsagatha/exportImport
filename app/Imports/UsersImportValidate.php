@@ -11,10 +11,20 @@ use Maatwebsite\Excel\Concerns\WithValidation;
 class UsersImportValidate implements ToModel, WithHeadingRow, WithValidation
 {
   /**
+  * Sin encabezados
   * @param array $row
-  *
   * @return \Illuminate\Database\Eloquent\Model|null
   */
+  /* public function model(array $row)
+  {
+    return new User([
+      'username' => $row[1],
+      'name'     => $row[2],
+      'email'    => $row[3],
+      'password' => Hash::make($row[4]),
+    ]);
+  } */
+
   public function model(array $row)
   {
     return new User([

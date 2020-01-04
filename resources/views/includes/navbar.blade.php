@@ -38,6 +38,16 @@
             </a>
           </div>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Importar Productos y Categorías
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item waves-effect" href="{{ route('admin.imports.excel.index') }}">
+              Con Laravel Excel
+            </a>
+          </div>
+        </li>
       </ul>
 
       <!-- Right -->
