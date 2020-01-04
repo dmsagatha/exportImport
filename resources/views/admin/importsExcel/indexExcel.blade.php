@@ -18,12 +18,14 @@
       <div class="card">
         <div class="card-body">
           <div class="text-sm-left mb-3" align="right">
-            <form action="{{ route('admin.usersExcel.import_validate') }}" method="POST" enctype="multipart/form-data">
+            <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" 
+              action="{{ route('admin.importsExcel.importProductsCategories') }}" 
+              class="form-horizontal" method="POST" enctype="multipart/form-data">
               @csrf
 
-              <input type="file" name="usersImportCE" />
-              <button class="btn btn-primary" data-toggle="tooltip" title="Ejemplo: public/dataImport/Excel-usersImport-CE-Update.csv">
-                Importar Usuarios con Validaciones - (CE)
+              <input type="file" name="productsCategories" style="width:25%;" />
+              <button class="btn btn-primary" data-toggle="tooltip" title="Ejemplo: public/dataImport/Excel-Products-CategoriesImport.csv">
+                Importar Productos - (CE)
               </button>
             </form>
           </div>

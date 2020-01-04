@@ -24,17 +24,17 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Exportar | Importar Usuarios
+            Exportar | Importar 1 Tabla
           </a>
           <div class="dropdown-menu">
             <a class="dropdown-item waves-effect" href="{{ route('admin.users.excel.index') }}">
-              Con Laravel Excel
+              Usuarios - Con Laravel Excel
             </a>
             <a class="dropdown-item waves-effect" href="{{ route('admin.users.index') }}">
-              Con Trait
+              Usuarios - Con Trait
             </a>
-            <a class="dropdown-item waves-effect" href="{{ route('admin.csvUploads.index') }}">
-              Con Validaciones - Zaengle
+            <a class="dropdown-item waves-effect" href="{{ route('admin.categories.index') }}">
+              Categorías - Con Trait
             </a>
           </div>
         </li>
@@ -43,7 +43,10 @@
             Importar Productos y Categorías
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item waves-effect" href="{{ route('admin.imports.excel.index') }}">
+            <a class="dropdown-item waves-effect" href="{{ route('admin.csvUploads.index') }}">
+              Con Validaciones - Zaengle
+            </a>
+            <a class="dropdown-item waves-effect" href="{{ route('admin.importsExcel.index') }}">
               Con Laravel Excel
             </a>
           </div>

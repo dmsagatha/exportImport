@@ -24,15 +24,18 @@ Route::group(
     Route::post('users/importValidate', 'UsersExcelController@import_validate')->name('usersExcel.import_validate');
     
     // Importar Productos y Categorías con Laravel Excel
-    Route::get('importsExcel', 'ImportsExcelController@index')->name('imports.excel.index');
-    //Route::post('users/import', 'UsersExcelController@import')->name('usersExcel.import');
+    Route::get('importsExcel', 'ImportsExcelController@index')->name('importsExcel.index');
+    Route::post('importsExcel/Products', 'ImportsExcelController@importProductsCategories')->name('importsExcel.importProductsCategories');
     
-    // Importar Usuarios con Trait - Daily Laravel
+    // Importar con Trait - Daily Laravel
     // https://www.youtube.com/watch?v=tpZK2A98ig0
     // Validaciones: https://www.youtube.com/watch?v=pshvWCCyCGw
     Route::resource('users', 'UsersController');
     Route::post('usersImport/parseCsv', 'UsersController@parseCsvImport')->name('users.parseCsvImport');
     Route::post('usersImport/processCsv', 'UsersController@processCsvImport')->name('users.processCsvImport');
+    Route::resource('categories', 'CategoryController');
+    Route::post('categoriesImport/parseCsv', 'CategoryController@parseCsvImport')->name('categories.parseCsvImport');
+    Route::post('categoriesImport/processCsv', 'CategoryController@processCsvImport')->name('categories.processCsvImport');
 
     // Importar Usuarios con Trait - Zaengle
     // https://zaengle.com/blog/building-a-csv-importer-part-1
