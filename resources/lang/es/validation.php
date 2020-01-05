@@ -112,7 +112,7 @@ return [
     'uploaded'             => 'Subir :attribute ha fallado.',
     'url'                  => 'El formato :attribute es inválido.',
     'uuid'                 => 'El campo :attribute debe ser un UUID válido.',
-    'app_imported_rows_to_table'  => 'Se importaron filas a las tablas',
+    'app_imported_rows_to_table'  => 'Se importaron :rows filas a la tabla :table',
 
     /*
     |--------------------------------------------------------------------------

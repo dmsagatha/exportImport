@@ -53,11 +53,11 @@ class ProductsCategoriesImport implements ToModel, WithHeadingRow, WithValidatio
   public function customValidationMessages()
   {
     return [
-      'url.required'    =>  'La Url es requerido.',
-      //'url.exists'    =>  'La Url ya existe',
-      'title.required'  =>  'El Título es requerido.',
-      'description.required'  =>  'La Descripción es requerida.',
-      'name.exists'     =>  'El Nombre de la Categoría no existe',
+      'url.required'    =>  'El campo :attribute es requerido.',
+      //'url.exists'    =>  'El campo :attribute ya existe',
+      'title.required'  =>  'El campo :attribute es requerido.',
+      'description.required'  =>  'El campo :attribute es requerida.',
+      'name.exists'     =>  'El campo :attribute de la Categoría no existe',
     ];
   }
 

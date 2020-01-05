@@ -55,7 +55,6 @@
           @else
             <h4>No hay registros creados</h4>
           @endif
-          
         </div>
       </div>
     </div>
