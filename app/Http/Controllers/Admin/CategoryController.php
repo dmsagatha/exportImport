@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
-use App\Http\Controllers\Traits\CsvImportTrait;
+use App\Traits\CsvImportTrait;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

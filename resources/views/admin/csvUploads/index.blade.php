@@ -28,7 +28,7 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-md">
+            <div class="col-4-sm">
               <p class="font-weight-bold">Resumen</p>
               <ul>
                 <li>Cargar, almacenar y mapear los datos CSV</li>
@@ -36,7 +36,7 @@
                 <li>Manejo de errores</li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-8-sm">
               <p class="font-weight-bold">Procedimiento</p>
               <ul>
                 <li>Subir un archivo CSV</li>
