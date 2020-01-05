@@ -26,6 +26,30 @@
           </a>
         </h3>
 
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <p class="font-weight-bold">Resumen</p>
+              <ul>
+                <li>Cargar, almacenar y mapear los datos CSV</li>
+                <li>Procesar y distribuir las filas individuales según la aplicación</li>
+                <li>Manejo de errores</li>
+              </ul>
+            </div>
+            <div class="col-md">
+              <p class="font-weight-bold">Procedimiento</p>
+              <ul>
+                <li>Subir un archivo CSV</li>
+                <li>Crear un registro CsvUpload para contener todos los datos</li>
+                <li>Definir el mapeo de columnas del Csv a la aplicación</li>
+                <li>Dividir las filas en registros CsvRow individuales</li>
+                <li>Revisar los detalles o logs de la importaciones</li>
+                <li class="font-weight-bolder">Ejemplo: public/dataImport/Csv-Products-CategoriesImport.csv</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <div class="text-center">
           <a class="btn btn-deep-orange" href="{{ route('admin.csvUploads.create') }}"
             data-toogle="tooltip" 
