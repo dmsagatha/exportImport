@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Usuarios')
+@section('title', 'Categories')
 
 @section('content')
   <div class="card mb-4 wow fadeIn">
@@ -8,7 +8,7 @@
       <h4 class="mb-2 mb-sm-0 pt-1">
         <a href="{{ route('panel') }}">Dashboard</a>
         <span>/</span>
-        <span>Importar Usuarios - Con Trait</span>
+        <span>Importar Categorías - Con Trait</span>
       </h4>
     </div>
   </div>
@@ -19,17 +19,17 @@
         <button class="btn btn-warning" 
           data-toggle="modal" 
           data-target="#csvImportModal" 
-          title="Ejemplo: public/dataImport/Traits-usersImportCsv-CE.csv o Traits-usersImportCsv-CE-Update.csv">
+          title="Ejemplo: public/dataImport/Trait-categoriesImportCsv-CE.csv o Trait-categoriesImportCsv-CE-Update.csv">
           Importar CSV
         </button>
         @include('csvImport.modal', [
-          'model' => 'User', 
-          'route' => 'admin.users.parseCsvImport']
+          'model' => 'Category', 
+          'route' => 'admin.categories.parseCsvImport']
         )
         
-        @if (! $users->isEmpty())
+        @if (! $categories->isEmpty())
           <div class="table-responsive-sm text-nowrap">
-            @include('admin.users._table', $users)
+            @include('admin.categories._table', $categories)
           </div>
         @else
           <h4>No hay registros creados</h4>

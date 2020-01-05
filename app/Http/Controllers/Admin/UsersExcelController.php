@@ -37,19 +37,6 @@ class UsersExcelController extends Controller
     return Excel::download(new UsersExportStyling(), 'usersExportStyling.xlsx');
   }
 
-  public function import()
-  {
-    // Validar el archivo
-    request()->validate([
-      'usersImportSE' => 'required'
-    ]);
-    
-    Excel::import(new UsersImport(), request()->file('usersImportSE'));
-
-    return redirect()->route('admin.users.excel.index')
-                     ->with('success', 'Importado satisfactoriamente!.');
-  }
-
   public function import_validate(Request $request)
   {
     // Validar el archivo
