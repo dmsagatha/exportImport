@@ -16,6 +16,10 @@
   <div class="col-md-12 mb-4">
     <div class="card">
       <div class="card-body">
+        <h2 class="text-center mb-2">
+          Importar / Exportar con Validaciones usando Traits
+        </h2>
+        
         <button class="btn btn-warning" 
           data-toggle="modal" 
           data-target="#csvImportModal" 
