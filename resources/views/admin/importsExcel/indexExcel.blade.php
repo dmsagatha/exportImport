@@ -17,15 +17,23 @@
     <div class="col-md-12 mb-4">
       <div class="card">
         <div class="card-body">
+          <h2 class="text-center mb-2">
+            Importar Tablas Relacionadas con Laravel Excel
+          </h2>
+
+          <p class="text-muted">
+            Con encabezados - (CE)
+          </p>
+
           <div class="text-sm-left mb-3" align="right">
-            <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" 
-              action="{{ route('admin.importsExcel.importProductsCategories') }}" 
-              class="form-horizontal" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.importsExcel.importProductsCategories') }}"
+              method="POST" enctype="multipart/form-data">
               @csrf
 
-              <input type="file" name="productsCategories" style="width:25%;" />
-              <button class="btn btn-primary" data-toggle="tooltip" title="Ejemplo: public/dataImport/Excel-Products-CategoriesImport.csv">
-                Importar Productos - (CE)
+              <input type="file" name="productsCategories" />
+              <button class="btn btn-primary" data-toggle="tooltip" 
+                title="Ejemplo: public/dataImport/Excel-Products-CategoriesImport.csv">
+                Importar Productos con Validaciones - (CE)
               </button>
             </form>
           </div>

@@ -40,7 +40,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Importar Productos y Categorías
+            Importar Tablas Relacionadas
           </a>
           <div class="dropdown-menu">
             <a class="dropdown-item waves-effect" href="{{ route('admin.csvUploads.index') }}">

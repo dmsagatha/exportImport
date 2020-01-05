@@ -5,11 +5,10 @@ namespace App\Imports;
 use App\Models\Product;
 use App\Models\Category;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
-use lluminate\Database\Eloquent\Collection;
-use Maatwebsite\Excel\Concerns\FromCollection;
 
-class ProductsCategoriesImport implements ToModel, WithValidation
+class ProductsCategoriesImport implements ToModel, WithHeadingRow, WithValidation
 {
   /**
   * @param array $row
@@ -19,12 +18,12 @@ class ProductsCategoriesImport implements ToModel, WithValidation
   public function model(array $row)
   {
     // Si los registros existen actualzarlos, de lo contrario crearlos
-    $product  = Product::where('url', '=', $row[0])->first();
-    $category = Category::where('name', '=', $row[3])->first();
+    $product  = Product::where('url', '=', $row['url'])->first();
+    $category = Category::where('name', '=', $row['name'])->first();
 
     if ($product) {
-      $product->title       = $row[1];
-      $product->description = $row[2];
+      $product->title       = $row['title'];
+      $product->description = $row['description'];
       $product->category_id = $category->id;
 
       $product->save();
@@ -33,9 +32,9 @@ class ProductsCategoriesImport implements ToModel, WithValidation
     }
     else {
       return new Product([
-        'url'         => $row[0],
-        'title'       => $row[1],
-        'description' => $row[2],
+        'url'         => $row['url'],
+        'title'       => $row['title'],
+        'description' => $row['description'],
         'category_id' => $category->id,
       ]);
     }
@@ -44,31 +43,31 @@ class ProductsCategoriesImport implements ToModel, WithValidation
   public function rules():array
   {
     return ([
-      '0' => 'required',//|unique:products,url',
-      '1' => 'required',
-      '2' => 'required',
-      '3' => 'required|exists:categories,name',
+      'url'   => 'required',
+      'title' => 'required',
+      'description' => 'required',
+      'name'  => 'required|exists:categories,name',
     ]);
   }
 
   public function customValidationMessages()
   {
     return [
-      '0.required'  =>  'La Url es requerido.',
-      //'0.exists'    =>  'La Url ya existe',
-      '1.required'  =>  'El Título es requerido.',
-      '2.required'  =>  'La Descripción es requerida.',
-      '3.exists'    =>  'El Nombre de la Categoría no existe',
+      'url.required'    =>  'La Url es requerido.',
+      //'url.exists'    =>  'La Url ya existe',
+      'title.required'  =>  'El Título es requerido.',
+      'description.required'  =>  'La Descripción es requerida.',
+      'name.exists'     =>  'El Nombre de la Categoría no existe',
     ];
   }
 
   public function customValidationAttributes()
   {
     return [
-      '0' => 'url',
-      '1' => 'title',
-      '2' => 'description',
-      '3' => 'Category',
+      'url'         => 'url',
+      'title'       => 'title',
+      'description' => 'description',
+      'Category'    => 'Category',
     ];
   }
 }

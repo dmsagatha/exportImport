@@ -7,7 +7,7 @@
       <th colspan="2">CATEGORIAS</th>
       <th rowspan="2" class="align-middle">DESCRIPCION</th>
     </tr>
-    <tr>
+    <tr class="text-center">
       <th>NOMBRE</th>
       <th>URL</th>
     </tr>

@@ -17,10 +17,13 @@
     <div class="col-md-12 mb-4">
       <div class="card">
         <div class="card-body">
+          <h2 class="text-center mb-2">Importar / Exportar con Laravel Excel</h2>
+
           <p class="text-muted">
             Sin encabezados - (SE) <br>
             Con encabezados - (CE)
           </p>
+          
           <div class="text-sm-left mb-3" align="right">
             <a href="{{ route('admin.usersExcel.export') }}" class="btn btn-info" data-toggle="tooltip" title="Exportar toda la info sin encabezados">
               Exportar Usuarios - (SI)

@@ -26,7 +26,7 @@
             <input type="file" name="csvFile" id="csvFile">
           </div>
           <div class="mb-4">
-            <input id="hasHeaders" name="hasHeaders" type="checkbox">
+            <input id="hasHeaders" name="hasHeaders" type="checkbox" checked>
             <label for="hasHeaders">El archivo contiene fila de encabezados?</label>
           </div>
           <div class="mt-4">
