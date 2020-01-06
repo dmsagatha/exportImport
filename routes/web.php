@@ -48,8 +48,13 @@ Route::group(
     Route::get('csvUploads/{csvUpload}/map-columns', 'MapColumnsController@show')->name('csvUploads.map-columns.show');
     Route::post('csvUploads/{csvUpload}/map-columns', 'MapColumnsController@store')->name('csvUploads.map-columns.store');
 
-    // Importar validando si el campo único en ImportData y realizar la importación
+    // Importar vallidando si el campo único en el Modelo ImportData y realizar la importación
     Route::get('importView', 'Import\ImportController@importView')->name('importView');
     Route::post('importView', 'Import\ImportController@importDataUser')->name('importView.dataUser');
+
+    // Importar tablas relacionadas
+    // Programación y más
+    // https://www.youtube.com/watch?v=xEpNTPJ2dOc&list=PLzSFZWTjelbIi1UJ3WZZK8vVzgmhjAq25&index=19
+    Route::get('importView/relatedTables', 'Import\ImportController@importProducts')->name('importView.relatedTables');
   }
 );

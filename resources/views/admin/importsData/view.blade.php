@@ -15,12 +15,17 @@
   
   <div class="col-md-12 mb-4">
     <div class="card">
-      <div class="card-body">
-        <h3 class="text-center mb-5">
+      <div class="card-body text-center">
+        <h3>
           Importar Datos CSV con validación <br> desde el Modelo/Controlador
         </h3>
+        <h5 class="mb-5">
+          Guía: <a href="https://makitweb.com/import-csv-data-to-mysql-database-with-laravel/">
+            Import CSV Data to MySQL Database with Laravel 
+          </a>
+        </h5>
 
-        <div class="text-center">
+        <div>
           {{ Form::open(['route'=>'admin.importView.dataUser', 'method'=>'POST', 'files'=>'true']) }}
             @csrf
 
@@ -34,6 +39,14 @@
             </div>
           {{ Form::close() }}
         </div>
+        
+        @if (! $users->isEmpty())
+          <div class="table-responsive-sm text-nowrap">
+            @include('admin.users._table', $users)
+          </div>
+        @else
+          <h4>No hay registros creados</h4>
+        @endif
       </div>
     </div>
   </div>

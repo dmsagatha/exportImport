@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ImportData extends Model
 {
-  public static function insertDataUsers($data)
+  /* public static function insertDataUsers($data)
   {
     $value = User::where('username', '=', $data['username'])->first();
     
@@ -19,5 +20,15 @@ class ImportData extends Model
     }
 
     return $value->id;
+  } */
+
+  // 2da. opción
+  public static function insertDataUsers($data)
+  {
+    $value = DB::table('users')->where('username', $data['username'])->get();
+    
+    if ($value->count() == 0) {
+      DB::table('users')->insert($data);
+    }
   }
 }
