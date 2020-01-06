@@ -47,5 +47,9 @@ Route::group(
 
     Route::get('csvUploads/{csvUpload}/map-columns', 'MapColumnsController@show')->name('csvUploads.map-columns.show');
     Route::post('csvUploads/{csvUpload}/map-columns', 'MapColumnsController@store')->name('csvUploads.map-columns.store');
+
+    // Importar validando si el campo único en ImportData y realizar la importación
+    Route::get('importView', 'Import\ImportController@importView')->name('importView');
+    Route::post('importView', 'Import\ImportController@importDataUser')->name('importView.dataUser');
   }
 );
