@@ -102,7 +102,7 @@ trait CsvImportTrait
 
       File::delete($path);
 
-      session()->flash('message', trans('global.app_imported_rows_to_table', ['rows' => $rows, 'table' => $table]));
+      session()->flash('message', trans('validation.app_imported_rows_to_table', ['rows' => $rows, 'table' => $table]));
 
       return redirect($request->input("redirect"));
     } catch (\Exception $ex) {
