@@ -22,11 +22,11 @@ class ImportController extends Controller
     $arrays = collect(array_map('str_getcsv', file($request->file('csvFile')->getRealPath())));
     
     // Obtener los encabezados
-    $header = $arrays->shift();
+    $headerRow = $arrays->shift();
 
     foreach ($arrays as $array)
     {
-      $array = array_combine($header, $array);
+      $array = array_combine($headerRow, $array);
 
       $insertData = [
         'username'  => $array['username'],

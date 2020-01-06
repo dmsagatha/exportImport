@@ -16,7 +16,8 @@
   <div class="col-md-12 mb-4">
     <div class="card">
       <div class="card-body">
-        <h3 class="mb-5">Importar Datos CSV desde el Modelo-Controlador
+        <h3 class="text-center mb-5">
+          Importar Datos CSV con validación <br> desde el Modelo/Controlador
         </h3>
 
         <div class="text-center">
@@ -24,7 +25,7 @@
             @csrf
 
             <div class="form-group">
-              <input type="file" name="csvFile">
+              <input type="file" name="csvFile" data-toggle="tooltip" title="Ejemplo: public/dataImport/Csv-usersImport-CE.csv o Trait-usersImport-CE.csv">
               {!! $errors->first('csvFile', '<div class="text-danger">:message</div>') !!}
 
               <button type="submit" value="Importar" class="btn btn-info btn-sm">
