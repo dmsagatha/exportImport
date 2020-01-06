@@ -1,8 +1,8 @@
 url,title,description,name
-cum,Dolorem modi non ipsa.,Id id dolorum porro.,accusamus
-autem,Aut aut mollitia eos hic id.,Molestias id ut et unde voluptas voluptate.,aliquid
-at,Sit quia qui earum quis.,Sequi totam voluptates nulla officiis ad.,culpa
-dolorem,Sequi aut dolores sint quo.,Et autem explicabo est est.,dolores
-Quijote,Todas estas borrascas que nos suceden,"Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables,",aliquid
-Cicero,Sed ut perspiciatis,"Ut enim ad minima veniam, quis nostrum exercitationem ullam",culpa
-Kafka,Estaba echado de espaldas ,"Estaba echado de espaldas sobre un duro caparazón y, al alzar la cabeza, vio su vientre convexo y oscuro",et
+cum,Dolorem modi non ipsa.,Id id dolorum porro.,Categoria 1
+autem,Aut aut mollitia eos hic id.,Molestias id ut et unde voluptas voluptate.,Categoria 2
+at,Sit quia qui earum quis.,Sequi totam voluptates nulla officiis ad.,Categoria 3
+dolorem,Sequi aut dolores sint quo.,Et autem explicabo est est.,Categoria 4
+Quijote,Todas estas borrascas que nos suceden,"Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo,",Categoria 5
+Cicero,Sed ut perspiciatis,"Ut enim ad minima veniam, quis nostrum exercitationem ullam",Categoria 1
+Kafka,Estaba echado de espaldas ,"Estaba echado de espaldas sobre un duro caparazón y, al alzar la cabeza, vio su vientre convexo y oscuro",Categoria 2

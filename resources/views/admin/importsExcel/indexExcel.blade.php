@@ -20,6 +20,7 @@
           <h2 class="text-center mb-2">
             Importar Tablas Relacionadas con Laravel Excel
           </h2>
+          <h4 class="text-center mb-2">Crear / Actualizar Productos</h4>
 
           <p class="text-muted">
             Con encabezados - (CE)

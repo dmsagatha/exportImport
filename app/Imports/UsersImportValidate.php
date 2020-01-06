@@ -24,14 +24,14 @@ class UsersImportValidate implements ToModel, WithHeadingRow, WithValidation, Sk
       'email'    => $row['email'],
       'password' => Hash::make($row['password']),
     ]); */
-
+    
     if (!empty($row)) {
       User::firstOrCreate([
-        'username' => $row['username'],
-        'name'     => $row['name'],
-        'email'    => $row['email'],
-        'password' => Hash::make($row['password']),
-￼      ]);
+          'username' => $row['username'],
+          'name' => $row['name'],
+          'email' => $row['email'],
+          'password' => Hash::make($row['password']),
+      ]);
     }
   }
 
