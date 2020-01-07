@@ -49,9 +49,6 @@
             <a class="dropdown-item waves-effect" href="{{ route('admin.importsExcel.index') }}">
               Con Laravel Excel
             </a>
-            <a class="dropdown-item waves-effect" href="{{ route('import.relatedTables.products') }}">
-              Productos - Categorías
-            </a>
           </div>
         </li>
         <li class="nav-item dropdown">
