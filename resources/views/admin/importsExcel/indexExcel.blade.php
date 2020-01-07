@@ -31,9 +31,10 @@
               method="POST" enctype="multipart/form-data">
               @csrf
 
-              <input type="file" name="productsCategories" />
-              <button class="btn btn-primary" data-toggle="tooltip" 
-                title="Ejemplo: public/dataImport/Excel-Products-CategoriesImport.csv">
+              <input type="file" name="productsCategories" 
+                data-toggle="tooltip" 
+                title="Ejemplo: public/dataImport/Excel-Products-CategoriesImport.csv" />
+              <button class="btn btn-primary">
                 Importar Productos con Validaciones - (CE)
               </button>
             </form>
@@ -41,7 +42,7 @@
           
           @if (! $products->isEmpty())
             <div class="table-responsive-sm">
-              @include('admin.importsExcel._table', $products)
+              @include('admin.products._table', $products)
             </div>
           @else
             <h4>No hay registros creados</h4>

@@ -41,8 +41,9 @@
             <form action="{{ route('admin.usersExcel.import_validate') }}" method="POST" enctype="multipart/form-data">
               @csrf
 
-              <input type="file" name="usersImportCE" />
-              <button class="btn btn-primary" data-toggle="tooltip" title="Ejemplo: public/dataImport/Excel-usersImport-CE-Update.csv">
+              <input type="file" name="usersImportCE" data-toggle="tooltip" 
+                title="Ejemplo: public/dataImport/usersImport.csv o usersImport-Update.csv" />
+              <button class="btn btn-primary">
                 Importar Usuarios con Validaciones - (CE)
               </button>
             </form>
