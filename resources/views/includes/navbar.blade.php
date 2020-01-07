@@ -56,8 +56,11 @@
             Importar Validación Model
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item waves-effect" href="{{ route('admin.importView') }}">
+            <a class="dropdown-item waves-effect" href="{{ route('import.users') }}">
               Usuarios
+            </a>
+            <a class="dropdown-item waves-effect" href="{{ route('import.categories') }}">
+              Categorías
             </a>
           </div>
         </li>

@@ -48,13 +48,30 @@ Route::group(
     Route::get('csvUploads/{csvUpload}/map-columns', 'MapColumnsController@show')->name('csvUploads.map-columns.show');
     Route::post('csvUploads/{csvUpload}/map-columns', 'MapColumnsController@store')->name('csvUploads.map-columns.store');
 
-    // Importar vallidando si el campo único en el Modelo ImportData y realizar la importación
-    Route::get('importView', 'Import\ImportController@importView')->name('importView');
-    Route::post('importView', 'Import\ImportController@importDataUser')->name('importView.dataUser');
-
     // Importar tablas relacionadas
     // Programación y más
     // https://www.youtube.com/watch?v=xEpNTPJ2dOc&list=PLzSFZWTjelbIi1UJ3WZZK8vVzgmhjAq25&index=19
     Route::get('importView/relatedTables', 'Import\ImportController@importProducts')->name('importView.relatedTables');
+
+    // Importar archivos grandes
+    // https://daveismyname.blog/laravel-import-large-csv-file
+    Route::get('importView/categories', 'Import\ImportController@importViewCategories')->name('importView.categories');
+    Route::post('importView/importLarge', 'Import\ImportController@importLarge')->name('importView.importLarge');
   }
 );
+
+// Importaciones de datos a la Base de Datos
+Route::group([
+    'namespace' => 'Admin\Import',
+    'as' 		=> 'import.',
+    'prefix'    => 'import'
+  ],
+  function () {
+    // Importar validando el campo único en el Modelo ImportData y realizar la importación
+    // https://makitweb.com/import-csv-data-to-mysql-database-with-laravel/
+    Route::get('users', 'ImportController@viewUsers')->name('users');
+    Route::post('users', 'ImportController@importUsers')->name('usersCsv');
+    
+    Route::get('categories', 'ImportController@viewCategories')->name('categories');
+    Route::post('categories', 'ImportController@importCategories')->name('categoriesCsv');
+  });

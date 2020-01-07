@@ -21,16 +21,16 @@
         </h3>
         <h5 class="mb-5">
           Guía: <a href="https://makitweb.com/import-csv-data-to-mysql-database-with-laravel/">
-            Import CSV Data to MySQL Database with Laravel 
+            Import CSV Data to MySQL Database with Laravel
           </a>
         </h5>
 
         <div>
-          {{ Form::open(['route'=>'admin.importView.dataUser', 'method'=>'POST', 'files'=>'true']) }}
+          {{ Form::open(['route'=>'import.usersCsv', 'method'=>'POST', 'files'=>'true']) }}
             @csrf
 
             <div class="form-group">
-              <input type="file" name="csvFile" data-toggle="tooltip" title="Ejemplo: public/dataImport/Csv-usersImport-CE.csv o Trait-usersImport-CE.csv">
+              <input type="file" name="csvFile" data-toggle="tooltip" title="Ejemplo: public/dataImport/usersImport.csv o usersImport-Update.csv">
               {!! $errors->first('csvFile', '<div class="text-danger">:message</div>') !!}
 
               <button type="submit" value="Importar" class="btn btn-info btn-sm">

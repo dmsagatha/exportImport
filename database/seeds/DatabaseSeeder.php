@@ -9,7 +9,7 @@ class DatabaseSeeder extends Seeder
 {
   public function run()
   {
-    // factory(Category::class, 10)->create();
+    //factory(Category::class, 3000)->create();
 
     // Datos ejemplos para las importaciones
     /* DB::table('categories')->insert([
