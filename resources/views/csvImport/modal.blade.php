@@ -15,7 +15,9 @@
                 <label for="csv_file" class="control-label">Archivo CSV a importar</label>
 
                 <div class="col-md-12">
-                  <input id="csv_file" type="file" class="form-control-file" name="csv_file" required>
+                  <input id="csv_file" type="file" class="form-control-file" name="csv_file" 
+                    data-toggle="tooltip" 
+                    title="Ejemplo: public/dataImport/ARCHIVO.csv o ARCHIVO-Update.csv" required />
 
                   @if($errors->has('csv_file'))
                     <span class="help-block">

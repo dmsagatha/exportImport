@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\CsvUpload;
+use App\Http\Requests\StoreCsvUploadRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -25,12 +26,12 @@ class CsvUploadController extends Controller
     return view('admin.csvUploads.create');
   }
   
-  public function store(Request $request)
+  public function store(StoreCsvUploadRequest $request)
   {
     // Validar el archivo
-    request()->validate([
+    /* request()->validate([
       'csvFile' => 'required'
-    ]);
+    ]); */
 
     // Extraer las filas del archivo cargado
     $data = collect(array_map('str_getcsv', file($request->file('csvFile')->getRealPath())));

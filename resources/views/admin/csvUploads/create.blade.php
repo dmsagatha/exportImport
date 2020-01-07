@@ -23,7 +23,9 @@
           {{ method_field('POST') }}
           
           <div class="mb-4">
-            <input type="file" name="csvFile" id="csvFile">
+            <input type="file" name="csvFile" id="csvFile"
+              data-toogle="tooltip" 
+              title="Ejemplo: public/dataImport/Csv-Products-CategoriesImport.csv" />
           </div>
           <div class="mb-4">
             <input id="hasHeaders" name="hasHeaders" type="checkbox" checked>

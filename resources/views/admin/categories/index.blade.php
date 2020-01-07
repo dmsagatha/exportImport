@@ -23,7 +23,7 @@
         <button class="btn btn-warning" 
           data-toggle="modal" 
           data-target="#csvImportModal" 
-          title="Ejemplo: public/dataImport/Trait-categoriesImportCsv-CE.csv o Trait-categoriesImportCsv-CE-Update.csv">
+          title="Ejemplo: public/dataImport/categoriesImportCsv.csv o categoriesImportCsv-Update.csv">
           Importar CSV
         </button>
         @include('csvImport.modal', [

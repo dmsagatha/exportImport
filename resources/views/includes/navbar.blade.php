@@ -51,6 +51,19 @@
             </a>
           </div>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Importar Validación Model
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item waves-effect" href="{{ route('import.users') }}">
+              Usuarios
+            </a>
+            <a class="dropdown-item waves-effect" href="{{ route('import.categories') }}">
+              Categorías
+            </a>
+          </div>
+        </li>
       </ul>
 
       <!-- Right -->

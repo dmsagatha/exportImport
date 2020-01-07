@@ -96,7 +96,7 @@ trait CsvImportTrait
       foreach ($for_insert as $insert_item) {
         $model::insert($insert_item);
       }
-
+      
       $rows  = count($insert);
       $table = Str::plural($modelName);
 
