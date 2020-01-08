@@ -9,7 +9,7 @@
   </div>
 @endif
 
-@if (Session('success'))
+{{-- @if (Session('success'))
   <div class="row">
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
@@ -18,7 +18,7 @@
       <strong>{{ session('success') }}</strong>
     </div>
   </div>
-@endif
+@endif --}}
 
 @if (Session()->has('danger'))
   <div class="row">

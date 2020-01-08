@@ -65,6 +65,10 @@ class ImportController extends Controller
     // Ruta al archivo
     $path = request()->file('csvFile')->getRealPath();
 
+    // Ver el contenido del archivo
+    //$content = file_get_contents($path);
+    //return str_getcsv($content);
+
     // file() - Devuelve un arreglo con cada una de las filas
     $file = file($path);
 
@@ -103,6 +107,48 @@ class ImportController extends Controller
     }
 
     return redirect()->route('import.categories')
+                    ->with('success', 'Importado satisfactoriamente!.');
+  }
+
+  public function viewProducts()
+  {
+    $products = Product::with('category')->get();
+
+    return view('admin.importsCsv.products', compact('products'));
+  }
+
+  public function importProducts()
+  { 
+    // Validación del archivo
+    request()->validate([
+      'csvFile' => 'required|mimes:csv,txt'
+    ]);
+
+    // Ruta al archivo
+    $path = request()->file('csvFile')->getRealPath();
+    
+    // Aplicar la función de (array_map) convertir el string con formato Csv
+    // a un arreglo, leer cada línea y devolverlo en un arreglo
+    $array = array_map('str_getcsv', file($path));
+
+    // Quitar los encabezados
+    array_shift($array);      // $headerRow = array_shift($array);
+
+    // Recorrer el archivo, verificar si el campo único existe, actualizarlo,
+    // de lo contrario crearlo
+    foreach ($array as $row) {
+      Product::updateOrCreate(
+        ['title' => $row[2]],
+        [
+          'title' => $row[2],
+          'url'   => $row[3],
+          'description' => $row[4],
+          'category_id' => $this->getCategoryId($row[0], $row[1]),
+        ]
+      );
+    }
+
+    return redirect()->route('import.relatedTables.products')
                     ->with('success', 'Importado satisfactoriamente!.');
   }
 
