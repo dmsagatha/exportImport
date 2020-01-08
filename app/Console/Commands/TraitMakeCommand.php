@@ -11,15 +11,21 @@ class TraitMakeCommand extends GeneratorCommand
    *
    * @var string
    */
-  protected $signature = 'make:trait';
-  //protected $name = 'make:trait';
+  protected $name = 'make:trait';
 
   /**
    * The console command description.
    *
    * @var string
    */
-  protected $description = 'Create a new Trait';
+  protected $description = 'Create a new trait';
+  
+  /**
+   * The type of class being generated.
+   *
+   * @var string
+   */
+  protected $type = 'Trait';
 
   /**
    * Get the stub file for the generator.
@@ -28,17 +34,7 @@ class TraitMakeCommand extends GeneratorCommand
    */
   protected function getStub()
   {
-      return __DIR__.'/stubs/trait.stub';
-  }
-
-  /**
-   * Execute the console command.
-   *
-   * @return mixed
-   */
-  public function handle()
-  {
-    //
+    return __DIR__.'/stubs/trait.stub';
   }
 
   /**
