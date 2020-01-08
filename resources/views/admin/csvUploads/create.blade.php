@@ -15,7 +15,7 @@
   
   <div class="col-md-12 mb-4">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body text-center">
         <h3 class="mb-5">Subir CSV</h3>
 
         <form action="{{ route('admin.csvUploads.store') }}" method="POST" enctype="multipart/form-data">
@@ -25,7 +25,7 @@
           <div class="mb-4">
             <input type="file" name="csvFile" id="csvFile"
               data-toogle="tooltip" 
-              title="Ejemplo: public/dataImport/Csv-Products-CategoriesImport.csv" />
+              title="Ejemplo: public/dataImport/products-Categories.csv o products-Categories-Update.csv" />
           </div>
           <div class="mb-4">
             <input id="hasHeaders" name="hasHeaders" type="checkbox" checked>

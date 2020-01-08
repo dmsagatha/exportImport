@@ -70,4 +70,10 @@ Route::group([
     // https://daveismyname.blog/laravel-import-large-csv-file
     Route::get('categories', 'ImportController@viewCategories')->name('categories');
     Route::post('categories', 'ImportController@importCategories')->name('categoriesCsv');
+
+    // Importar Tablas Relacionadas
+    // Programación y más
+    // https://www.youtube.com/watch?v=xEpNTPJ2dOc&list=PLzSFZWTjelbIi1UJ3WZZK8vVzgmhjAq25&index=19
+    Route::get('relatedTables/products', 'ImportController@viewProducts')->name('relatedTables.products');
+    Route::post('relatedTables/products', 'ImportController@importProducts')->name('relatedTables.productsCsv');
   });
