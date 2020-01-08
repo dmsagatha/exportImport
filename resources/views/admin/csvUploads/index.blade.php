@@ -53,7 +53,7 @@
         <div class="text-center">
           <a class="btn btn-deep-orange" href="{{ route('admin.csvUploads.create') }}"
             data-toogle="tooltip" 
-            title="Ejemplo: public/dataImport/Csv-Products-CategoriesImport.csv">
+            title="Ejemplo: public/dataImport/products-Categories.csv o products-Categories-Update.csv" />
             Importar Datos CSV
           </a>
         </div>

@@ -15,9 +15,9 @@
   
   <div class="col-md-12 mb-4">
     <div class="card">
-      <div class="card-body text-center">
-        <h3>Importar Archivos CSV de Tablas Relacionadas</h3>
-        <h5 class="mb-5">
+      <div class="card-body">
+        <h3 class="text-center">Importar Archivos CSV de Tablas Relacionadas</h3>
+        <h5 class="text-center mb-5">
           Guía: <a href="https://www.youtube.com/watch?v=xEpNTPJ2dOc&list=PLzSFZWTjelbIi1UJ3WZZK8vVzgmhjAq25&index=19">
             Importar desde Excel a varias tablas de una BD - Practicando PHP y Laravel - Programación y más
           </a>
@@ -29,7 +29,7 @@
 
             <div class="form-group">
               <input type="file" name="csvFile" data-toggle="tooltip" 
-                title="Ejemplo: public/dataImport/.csv" />
+                title="Ejemplo: public/dataImport/products-Categories.csv o products-Categories-Update.csv" />
               {!! $errors->first('csvFile', '<div class="text-danger">:message</div>') !!}
             
             <button type="submit" class="btn btn-success" name="submit">
