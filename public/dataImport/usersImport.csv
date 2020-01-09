@@ -1,21 +1,21 @@
-username,name,email,password,created_at,updated_at
-3147285,Prof. Eusebio Herzog I,yazmin43@example.org,123456,2020-01-02 15:15:33,2020-01-02 15:15:33
-3457590,Gabriella Little,cristopher.lehner@example.org,123456,2020-01-02 15:15:28,2020-01-02 15:15:28
-3461352,Maxwell Toy,rafael45@example.com,123456,2019-12-26 17:46:35,2019-12-26 17:46:38
-3784353,Mr. Wade Medhurst,bgreenholt@example.org,123456,2020-01-02 15:15:33,2020-01-02 15:15:33
-3819360,Mrs. Aylin Sipes,karley.dubuque@example.net,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
-3930252,Alysha Zemlak,wmarks@example.net,123456,2020-01-02 15:15:33,2020-01-02 15:15:33
-4178979,Fabiola Nolan,roscoe31@example.org,123456,2019-12-26 17:46:35,2019-12-26 17:46:38
-4285793,Dr. Gaetano Huels DDS,leola.goldner@example.net,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-4316052,Prof. Lance Beer IV,chammes@example.com,123456,2019-12-26 17:46:34,2019-12-26 17:46:36
-4376320,Solon Koepp,heathcote.brandy@example.com,123456,2019-12-26 17:46:35,2019-12-26 17:46:38
-4378410,Jazmin Huels,america89@example.net,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-4565279,Favian Tromp,schinner.jessy@example.org,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
-4671951,Katlynn Mills,rozella05@example.org,123456,2019-12-26 17:46:34,2019-12-26 17:46:36
-4806198,Dr. Fausto Grant,mack.schmidt@example.com,123456,2019-12-26 17:46:35,2019-12-26 17:46:37
-4883530,Dr. Woodrow Cremin,zboncak.melyssa@example.org,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
-4962562,Filomena Schumm,hermiston.aniya@example.com,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
-5044534,Jody Dietrich,jaren72@example.net,123456,2020-01-02 15:15:32,2020-01-02 15:15:32
-5091373,Maye Quitzon,linnea97@example.net,123456,2020-01-02 15:15:34,2020-01-02 15:15:34
-5209040,Mr. Michale Wehner,noe.armstrong@example.net,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-5341032,Abraham Kulas,cruickshank.karlee@example.net,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
+username,name,email,password
+3147285,Prof. Eusebio Herzog I,yazmin43@example.org,123456
+3457590,Gabriella Little,cristopher.lehner@example.org,123456
+3461352,Maxwell Toy,rafael45@example.com,123456
+3784353,Mr. Wade Medhurst,bgreenholt@example.org,123456
+3819360,Mrs. Aylin Sipes,karley.dubuque@example.net,123456
+3930252,Alysha Zemlak,wmarks@example.net,123456
+4178979,Fabiola Nolan,roscoe31@example.org,123456
+4285793,Dr. Gaetano Huels DDS,leola.goldner@example.net,123456
+4316052,Prof. Lance Beer IV,chammes@example.com,123456
+4376320,Solon Koepp,heathcote.brandy@example.com,123456
+4378410,Jazmin Huels,america89@example.net,123456
+4565279,Favian Tromp,schinner.jessy@example.org,123456
+4671951,Katlynn Mills,rozella05@example.org,123456
+4806198,Dr. Fausto Grant,mack.schmidt@example.com,123456
+4883530,Dr. Woodrow Cremin,zboncak.melyssa@example.org,123456
+4962562,Filomena Schumm,hermiston.aniya@example.com,123456
+5044534,Jody Dietrich,jaren72@example.net,123456
+5091373,Maye Quitzon,linnea97@example.net,123456
+5209040,Mr. Michale Wehner,noe.armstrong@example.net,123456
+5341032,Abraham Kulas,cruickshank.karlee@example.net,123456

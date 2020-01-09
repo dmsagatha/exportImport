@@ -14,6 +14,14 @@
               <input type="hidden" name="csv_data_file_id" value="{{ $csv_data_file->id }}" />
             
               <table class="table">
+                @if (isset($csv_header_fields))
+                  <tr>
+                    @foreach ($csv_header_fields as $csv_header_field)
+                      <th>{{ $csv_header_field }}</th>
+                    @endforeach
+                  </tr>
+                @endif
+
                 @foreach ($csv_data as $row)
                   <tr>
                     @foreach ($row as $key => $value)
@@ -26,7 +34,9 @@
                     <td>
                       <select name="fields[{{ $key }}]">
                         @foreach (config('app.db_fields') as $db_field)
-                          <option value="{{ $loop->index }}">{{ $db_field }}</option>
+                          {{-- <option value="{{ $loop->index }}">{{ $db_field }}</option> --}}
+                          <option value="{{ (\Request::has('header')) ? $db_field : $loop->index }}"
+                            @if ($key === $db_field) selected @endif>{{ $db_field }}</option>
                         @endforeach
                       </select>
                     </td>

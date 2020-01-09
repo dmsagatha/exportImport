@@ -1,21 +1,21 @@
-username,name,email,password,created_at,updated_at
-5495275,Buford Boyer,cboyle@example.net,123456,2020-01-02 15:15:34,2020-01-02 15:15:34
-5671668,Jamar Rohan,zachary04@example.net,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-6656012,Brad VonRueden,etrantow@example.com,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-6674251,Asia Kassulke,mgreenfelder@example.org,123456,2020-01-02 15:15:27,2020-01-02 15:15:27
-6895530,Miss Dulce Grant,oraynor@example.net,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-7020000,Prof. Kameron Goyette,hildegard14@example.net,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-7302995,Dr. Joana Herman,jack16@example.org,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
-7661089,Ms. Ivah Berge Sr.,mireya32@example.com,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-8078487,Prof. Julian Nikolaus DVM,kessler.stewart@example.org,123456,2020-01-02 15:15:33,2020-01-02 15:15:33
-8163947,Mrs. Alayna Marvin,tupton@example.org,123456,2019-12-26 17:46:35,2019-12-26 17:46:38
-8213789,Ms. Eveline Mann PhD,idella.zulauf@example.net,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-8253155,Kiley Rohan,jedidiah66@example.com,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-8671457,Helene Windler,stanley18@example.org,123456,2020-01-02 15:15:27,2020-01-02 15:15:27
-8821785,Dr. Audie Rolfson,emiliano.ohara@example.net,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
-8975035,Jammie Langosh,mhintz@example.net,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
-4378410,Jazmin Huels,america89@example.net,123456,2019-12-26 17:46:34,2019-12-26 17:46:37
-4565279,Favian Tromp,schinner.jessy@example.org,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
-3819360,Mrs. Aylin Sipes,karley.dubuque@example.net,123456,2020-01-02 15:15:35,2020-01-02 15:15:35
-3930252,Alysha Zemlak,wmarks@example.net,123456,2020-01-02 15:15:33,2020-01-02 15:15:33
-4178979,Fabiola Nolan,roscoe31@example.org,123456,2019-12-26 17:46:35,2019-12-26 17:46:38
+username,name,email,password
+5495275,Buford Boyer,cboyle@example.net,123456
+5671668,Jamar Rohan,zachary04@example.net,123456
+6656012,Brad VonRueden,etrantow@example.com,123456
+6674251,Asia Kassulke,mgreenfelder@example.org,123456
+6895530,Miss Dulce Grant,oraynor@example.net,123456
+7020000,Prof. Kameron Goyette,hildegard14@example.net,123456
+7302995,Dr. Joana Herman,jack16@example.org,123456
+7661089,Ms. Ivah Berge Sr.,mireya32@example.com,123456
+8078487,Prof. Julian Nikolaus DVM,kessler.stewart@example.org,123456
+8163947,Mrs. Alayna Marvin,tupton@example.org,123456
+8213789,Ms. Eveline Mann PhD,idella.zulauf@example.net,123456
+8253155,Kiley Rohan,jedidiah66@example.com,123456
+8671457,Helene Windler,stanley18@example.org,123456
+8821785,Dr. Audie Rolfson,emiliano.ohara@example.net,123456
+8975035,Jammie Langosh,mhintz@example.net,123456
+4378410,Jazmin Huels,america89@example.net,123456
+4565279,Favian Tromp,schinner.jessy@example.org,123456
+3819360,Mrs. Aylin Sipes,karley.dubuque@example.net,123456
+3930252,Alysha Zemlak,wmarks@example.net,123456
+4178979,Fabiola Nolan,roscoe31@example.org,123456

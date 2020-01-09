@@ -8,25 +8,24 @@ use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
 use Maatwebsite\Excel\Concerns\SkipsOnError;
+use Maatwebsite\Excel\Concerns\Importable;
 
-class UsersImportValidate implements ToModel, WithHeadingRow, WithValidation, SkipsOnError
+class UsersImportValidate implements ToModel, WithHeadingRow  //, WithValidation, SkipsOnError
 {
+  use Importable;
+  
   /**
   * @param array $row
   * @return \Illuminate\Database\Eloquent\Model|null
   */
   public function model(array $row)
   {
-    // Dos opciones
-    /* return new User([
-      'username' => $row['username'],
-      'name'     => $row['name'],
-      'email'    => $row['email'],
-      'password' => Hash::make($row['password']),
-    ]); */
-    
+    // Si el campo único username existe, se actualizará el registro,
+    // de lo contrario lo crea
     if (!empty($row)) {
-      User::firstOrCreate([
+      User::updateOrCreate(
+        ['username' => $row['username']],
+        [
           'username' => $row['username'],
           'name' => $row['name'],
           'email' => $row['email'],

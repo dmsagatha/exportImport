@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin\Import;
 use App\Models\User;
 use App\Models\CsvData;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
+use App\Imports\UsersImportValidate;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\CsvImportRequest;
 
@@ -23,10 +25,37 @@ class DailyImportController extends Controller
 
     // Analizar el archivo sin encabezados
     // Devolver un array de datos Csv
-    $data = array_map('str_getcsv', file($path));
+    //$data = array_map('str_getcsv', file($path));
+
+
+    if ($request->has('header')) {
+      //$data = Excel::load($path, function($reader) {})->get()->toArray();
+      $data = Excel::toArray(new UsersImportValidate, $request->file('csv_file'))[0];
+    } else {
+      $data = array_map('str_getcsv', file($path));
+    }
+
+    if (count($data) > 0) {
+      if ($request->has('header')) {
+          $csv_header_fields = [];
+          foreach ($data[0] as $key => $value) {
+              $csv_header_fields[] = $key;
+          }
+      }
+      $csv_data = array_slice($data, 0, 2);
+      $csv_data_file = CsvData::create([
+        'csv_filename' => $request->file('csv_file')->getClientOriginalName(),
+        'csv_header'   => $request->has('header'),
+        'csv_data'     => json_encode($data)
+      ]);
+    } else {
+      return redirect()->back();
+    }
+    return view('admin.dailyCsv.import_fields', compact('csv_data_file', 'csv_data'));
+
 
     // Almacenar temporalmente los datos completos en la tabla csv_data
-    $csv_data_file = CsvData::create([
+/*     $csv_data_file = CsvData::create([
       'csv_filename' => $request->file('csv_file')->getClientOriginalName(),
       'csv_header'   => $request->has('header'),
       'csv_data'     => json_encode($data)
@@ -36,7 +65,7 @@ class DailyImportController extends Controller
     // y el usuario selecciona los campos
     $csv_data = array_slice($data, 0, 2);   // Sin encabezado
     
-    return view('admin.dailyCsv.import_fields', compact('csv_data_file', 'csv_data'));
+    return view('admin.dailyCsv.import_fields', compact('csv_data_file', 'csv_data')); */
   }
 
   /**
@@ -52,7 +81,7 @@ class DailyImportController extends Controller
     $csv_data = json_decode($data->csv_data, true);
 
     // Recorrer los datos
-    foreach ($csv_data as $row) {
+    /* foreach ($csv_data as $row) {
         $user = new User();
 
         foreach (config('app.db_fields') as $index => $field) {
@@ -62,6 +91,21 @@ class DailyImportController extends Controller
         }
 
         $user->save();
+    } */
+
+    // Con encabezados
+    foreach ($csv_data as $row) {
+      $user = new User();
+
+      foreach (config('app.db_fields') as $index => $field) {
+        if ($data->csv_header) {
+          $user->$field = $row[$request->fields[$field]];
+        } else {
+          $user->$field = $row[$request->fields[$index]];
+        }
+      }
+
+      $user->save();
     }
 
     return redirect()->route('import.import')
