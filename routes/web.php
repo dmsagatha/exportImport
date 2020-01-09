@@ -76,4 +76,12 @@ Route::group([
     // https://www.youtube.com/watch?v=xEpNTPJ2dOc&list=PLzSFZWTjelbIi1UJ3WZZK8vVzgmhjAq25&index=19
     Route::get('relatedTables/products', 'ImportController@viewProducts')->name('relatedTables.products');
     Route::post('relatedTables/products', 'ImportController@importProducts')->name('relatedTables.productsCsv');
+
+    // https://quickadminpanel.com/blog/how-to-import-csv-in-laravel-and-choose-matching-fields/
+    // Formulario de importación
+    Route::get('/', 'DailyImportController@getImport')->name('import');
+    // Pantalla de análisis de campos
+    Route::post('/import_parse', 'DailyImportController@parseImport')->name('import_parse');
+    // Procesamiento con éxito (o no)
+    Route::post('/import_process', 'DailyImportController@processImport')->name('import_process');
   });

@@ -231,4 +231,11 @@ return [
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
     ],
+
+    'db_fields' => [
+        'username',
+        'name',
+        'email',
+        'password',
+    ]
 ];

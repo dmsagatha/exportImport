@@ -18,12 +18,12 @@ mix.browserSync({
     proxy: 		'http://exportimport.lrv/',
     browser: 	'Google Chrome',
     open:     false,
-    snippetOptions: {
+/*     snippetOptions: {
       rule: {
         match: /<\/body>/i,
         fn: function (snippet, match) {
           return snippet + match;
         }
       }
-    }
+    } */
 });
