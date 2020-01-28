@@ -2,8 +2,8 @@
 
 namespace App\Jobs;
 
-use App\Models\CsvRow;
 use App\Models\CsvUpload;
+use App\Models\CsvRow;
 use App\Jobs\ImportCsvRow;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;

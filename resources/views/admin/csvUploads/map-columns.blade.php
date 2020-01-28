@@ -38,6 +38,7 @@
                   @endforeach
                 </tr>
               @endforeach
+              
               @if($csvUpload->additionalRowCount)
                 <tr>
                   <td colspan="100" class="p-2">

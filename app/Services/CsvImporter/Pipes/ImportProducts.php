@@ -6,7 +6,6 @@ use App\Models\Product;
 use App\Services\CsvImporter\CsvImportTraveler;
 
 /**
- * Class ImportUser
  * @package App\Services\CsvImporter\Pipes
  */
 class ImportProducts implements CsvImporterPipe
