@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{{ asset('css/mdb.min.css') }}">
     <!-- MDBootstrap DataTables CSS -->
     <link rel="stylesheet" href="{{ asset('css/addons/datatables.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/addons/datatables-select.min.css') }}">
     <!-- MDBootstrap DataTables Select CSS -->
     <link href="{{ asset('css/addons/datatables-select.min.css') }}" rel="stylesheet">
     <!-- Your custom styles (optional) -->
